@@ -10,10 +10,9 @@ import Foundation
 import RxSwift
 
 class HomeViewModel : BaseViewModel{
-    
-    
+
     var movieTableData: Observable<[Movie]>
-    private var movies: Variable<[Movie]> = Variable([])
+    var movies: Variable<[Movie]> = Variable([])
     
     override init() {
         self.movieTableData = movies.asObservable()

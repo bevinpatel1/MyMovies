@@ -9,13 +9,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import FSPagerView
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseViewController{
     
     var viewModel : HomeViewModel!;
     
     @IBOutlet var searchBarButton: UIBarButtonItem!
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var pagerView: FSPagerView!
+    @IBOutlet var movieNameLabel: UILabel!
+    @IBOutlet var movieTypeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,21 +46,46 @@ class HomeViewController: BaseViewController {
             .disposed(by: disposeBag)
     }
     private func setViews(){
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 170, height: 260)
-        flowLayout.sectionInset  = UIEdgeInsets(top: 0, left: (Screen.width-170) / 2 , bottom: 0, right: (Screen.width-170) / 2 )
-        flowLayout.scrollDirection = .horizontal;
-        flowLayout.minimumLineSpacing  = 40
-        collectionView.setCollectionViewLayout(flowLayout, animated: true)
-        
+        self.setPager();
         self.viewModel.getMovies();
-        self.viewModel.movieTableData.bind(to: collectionView.rx.items(cellIdentifier: HomeCollectionViewCell.reuseIdentifier,
-                                                                       cellType: HomeCollectionViewCell.self)){ (row, element, cell) in
-                                                                        cell.moview = element;
-            }.disposed(by: disposeBag)
+        
+        self.viewModel.movies.asObservable().observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] _ in
+            guard let `self` = self else {return}
+            self.pagerView.reloadData()
+            self.titleLabel.isHidden = self.viewModel.movies.value.count > 0 ? false : true;
+            self.movieNameLabel.text = self.viewModel.movies.value.first?.title ?? ""
+            self.movieTypeLabel.text = self.viewModel.movies.value.first?.genreString() ?? ""
+        }).disposed(by: disposeBag)
+    }
+    private func setPager(){
+        self.pagerView.register(UINib(nibName: HomeCollectionViewCell.reuseIdentifier, bundle:nil), forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
+        self.pagerView.isInfinite = true
+        self.pagerView.interitemSpacing = 20
+        self.pagerView.contentMode = .scaleAspectFit
+        self.pagerView.automaticSlidingInterval = 3.0
+        
+        let transform = CGAffineTransform(scaleX: 1, y: 1)
+        self.pagerView.itemSize = CGSize(width: 170, height: 260).applying(transform)
+        self.pagerView.decelerationDistance = FSPagerView.automaticDistance
+        self.pagerView.transformer = FSPagerViewTransformer(type:.linear)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+extension HomeViewController : FSPagerViewDelegate,FSPagerViewDataSource{
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return viewModel.movies.value.count
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseIdentifier, at: index) as! HomeCollectionViewCell
+        cell.configure(movie: viewModel.movies.value[index])
+        return cell
+    }
+    func pagerViewDidScroll(_ pagerView: FSPagerView) {
+        let page = pagerView.currentIndex
+        self.movieNameLabel.text = self.viewModel.movies.value[Int(page)].title ?? ""
+        self.movieTypeLabel.text = self.viewModel.movies.value[Int(page)].genreString()
     }
 }

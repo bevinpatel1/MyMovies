@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCollectionViewCell" id="b3i-aD-RCQ" customClass="HomeCollectionViewCell" customModule="MyMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="260"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="260"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uk7-My-iNV">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="260"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6EX-Dh-srH">
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="232"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9P-9m-XgO">
+                                <rect key="frame" x="0.0" y="232" width="170" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="1nY-gh-RWt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="BUY TICKET">
+                                    <color key="titleColor" red="1" green="0.92156862750000001" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  PRE-SELE  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B70-zY-v1u">
+                                <rect key="frame" x="10" y="10" width="61" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="0.51013069509999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="PoO-oR-Cha"/>
+                                    <constraint firstAttribute="height" constant="20" id="oOa-Nz-9RI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1215686275" green="0.16862745100000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="B70-zY-v1u" firstAttribute="top" secondItem="Uk7-My-iNV" secondAttribute="top" constant="10" id="AVV-iF-ktq"/>
+                            <constraint firstItem="6EX-Dh-srH" firstAttribute="leading" secondItem="Uk7-My-iNV" secondAttribute="leading" id="Au5-xU-3M5"/>
+                            <constraint firstAttribute="trailing" secondItem="6EX-Dh-srH" secondAttribute="trailing" id="DwX-In-Pup"/>
+                            <constraint firstItem="D9P-9m-XgO" firstAttribute="top" secondItem="6EX-Dh-srH" secondAttribute="bottom" id="PrT-5Z-V4M"/>
+                            <constraint firstItem="D9P-9m-XgO" firstAttribute="leading" secondItem="Uk7-My-iNV" secondAttribute="leading" id="UXr-J2-hZg"/>
+                            <constraint firstAttribute="trailing" secondItem="D9P-9m-XgO" secondAttribute="trailing" id="eag-h3-pvN"/>
+                            <constraint firstItem="6EX-Dh-srH" firstAttribute="top" secondItem="Uk7-My-iNV" secondAttribute="top" id="iui-tL-2Nm"/>
+                            <constraint firstItem="B70-zY-v1u" firstAttribute="leading" secondItem="Uk7-My-iNV" secondAttribute="leading" constant="10" id="wk4-Ds-m4U"/>
+                            <constraint firstAttribute="bottom" secondItem="D9P-9m-XgO" secondAttribute="bottom" id="zFo-tb-BbB"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="14"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Uk7-My-iNV" secondAttribute="bottom" id="Fs5-0Z-JER"/>
+                <constraint firstItem="Uk7-My-iNV" firstAttribute="top" secondItem="b3i-aD-RCQ" secondAttribute="top" id="N4H-rW-jhH"/>
+                <constraint firstAttribute="trailing" secondItem="Uk7-My-iNV" secondAttribute="trailing" id="cYC-Br-Suu"/>
+                <constraint firstItem="Uk7-My-iNV" firstAttribute="leading" secondItem="b3i-aD-RCQ" secondAttribute="leading" id="dmK-wi-ZIP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Lba-gE-OT0"/>
+            <connections>
+                <outlet property="posterImage" destination="6EX-Dh-srH" id="Nei-w1-Ee8"/>
+                <outlet property="presaleLabel" destination="B70-zY-v1u" id="SxW-T9-lKl"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

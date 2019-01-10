@@ -31,6 +31,7 @@ class Movie: Codable {
     var releaseDate : Double?
     var posterPath  : String?
     var presaleFlag : Int?
+    var genreIds    : [Genre]?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -40,5 +41,17 @@ class Movie: Codable {
         case releaseDate    = "release_date"
         case posterPath     = "poster_path"
         case presaleFlag    = "presale_flag"
+        case genreIds       = "genre_ids"
+    }
+    func genreString()->String{
+        if let genreIdsArray = genreIds{
+            return genreIdsArray.map({$0.name ?? ""}).joined(separator: ", ")
+        }
+        else{
+            return ""
+        }
+    }
+    class Genre: Codable{
+        var name: String?
     }
 }
