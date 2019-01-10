@@ -11,4 +11,5 @@ target 'MyMovies' do
   pod 'MBProgressHUD'
   pod 'Kingfisher'
   pod 'SwiftMessages'
+  pod 'FSPagerView'
 end
