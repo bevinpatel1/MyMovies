@@ -30,7 +30,8 @@ class HomeViewController: BaseViewController{
         self.configureFSPager();
     }
     private func configureFSPager(){
-        self.pagerView.register(UINib(nibName: HomeCollectionViewCell.reuseIdentifier, bundle:nil), forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
+        self.pagerView.register(UINib(nibName: HomeCollectionViewCell.reuseIdentifier, bundle:nil),
+                                forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
         self.pagerView.isInfinite = true
         self.pagerView.automaticSlidingInterval = 3.0
         self.pagerView.itemSize = CGSize(width: 170, height: 260)
@@ -72,7 +73,6 @@ extension HomeViewController : FSPagerViewDelegate,FSPagerViewDataSource{
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         return viewModel.movies.value.count
     }
-    
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseIdentifier, at: index) as! HomeCollectionViewCell
         cell.configure(movie: viewModel.movies.value[index])

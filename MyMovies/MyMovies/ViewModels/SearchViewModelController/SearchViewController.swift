@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchViewController: BaseViewController {
 
@@ -18,10 +20,19 @@ class SearchViewController: BaseViewController {
     }
     override func setUI() {
         super.setUI()
-        searchBar.tintColor = UIColor.black;
+        searchBar.tintColor = UIColor.black
         searchBar.barStyle = .blackTranslucent
-        searchBar.showsCancelButton = true;
+        searchBar.showsCancelButton = true
         searchBar.sizeToFit()
+        searchBar.becomeFirstResponder();
         self.navigationItem.titleView = searchBar
+    }
+    override func setEventBinding() {
+        searchBar.rx.cancelButtonClicked.subscribe(onNext: {
+            self.searchBar.resignFirstResponder();
+        }).disposed(by: disposeBag)
+    }
+    override func setDataBinding() {
+        
     }
 }
