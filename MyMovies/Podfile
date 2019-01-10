@@ -1,0 +1,14 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+use_frameworks!
+target 'MyMovies' do
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxGesture'
+  pod 'Alamofire'
+  pod 'RxAlamofire'
+  pod 'MBProgressHUD'
+  pod 'Kingfisher'
+  pod 'SwiftMessages'
+end
