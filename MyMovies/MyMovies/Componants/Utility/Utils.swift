@@ -19,6 +19,10 @@ func viewController(forViewModel viewModel: Any) -> UIViewController? {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
         viewController?.viewModel = viewModel;
         return viewController;
+    case let viewModel as SearchViewModel:
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController
+        viewController?.viewModel = viewModel;
+        return viewController;
     default:
         return nil
     }

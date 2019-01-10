@@ -31,6 +31,8 @@
 		5209DE6021E74F0900C7D42C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE5F21E74F0900C7D42C /* HomeCollectionViewCell.swift */; };
 		5209DE6221E7578A00C7D42C /* UIImageView+SDWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6121E7578900C7D42C /* UIImageView+SDWebImage.swift */; };
 		5209DE6521E76DE000C7D42C /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5209DE6421E76DE000C7D42C /* HomeCollectionViewCell.xib */; };
+		5209DE6821E77C4400C7D42C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6721E77C4400C7D42C /* SearchViewModel.swift */; };
+		5209DE6A21E77C5D00C7D42C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6921E77C5D00C7D42C /* SearchViewController.swift */; };
 		52E0B39321E7420300759455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0B39221E7420300759455 /* AppDelegate.swift */; };
 		52E0B39821E7420300759455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E0B39621E7420300759455 /* Main.storyboard */; };
 		52E0B39A21E7420400759455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E0B39921E7420400759455 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		5209DE5F21E74F0900C7D42C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		5209DE6121E7578900C7D42C /* UIImageView+SDWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SDWebImage.swift"; sourceTree = "<group>"; };
 		5209DE6421E76DE000C7D42C /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		5209DE6721E77C4400C7D42C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		5209DE6921E77C5D00C7D42C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		52E0B38F21E7420300759455 /* MyMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E0B39221E7420300759455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E0B39721E7420300759455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				5209DE2A21E74BD000C7D42C /* BaseViewModelController */,
 				5209DE5521E74CB400C7D42C /* RootViewModelController */,
 				5209DE5621E74D7A00C7D42C /* HomeViewModelController */,
+				5209DE6621E77BFD00C7D42C /* SearchViewModelController */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -185,6 +190,15 @@
 				5209DE6421E76DE000C7D42C /* HomeCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		5209DE6621E77BFD00C7D42C /* SearchViewModelController */ = {
+			isa = PBXGroup;
+			children = (
+				5209DE6721E77C4400C7D42C /* SearchViewModel.swift */,
+				5209DE6921E77C5D00C7D42C /* SearchViewController.swift */,
+			);
+			path = SearchViewModelController;
 			sourceTree = "<group>";
 		};
 		52E0B38621E7420200759455 = {
@@ -376,6 +390,7 @@
 				5209DE4421E74C7300C7D42C /* APIRouter.swift in Sources */,
 				5209DE4C21E74C7300C7D42C /* Extension.swift in Sources */,
 				5209DE4E21E74C7300C7D42C /* Dictionary+CamelCase.swift in Sources */,
+				5209DE6A21E77C5D00C7D42C /* SearchViewController.swift in Sources */,
 				5209DE5421E74CAF00C7D42C /* BaseViewController.swift in Sources */,
 				5209DE4F21E74C7300C7D42C /* Utils.swift in Sources */,
 				5209DE4621E74C7300C7D42C /* APICallError.swift in Sources */,
@@ -389,6 +404,7 @@
 				5209DE4721E74C7300C7D42C /* API.swift in Sources */,
 				5209DE5A21E74E0400C7D42C /* HomeViewController.swift in Sources */,
 				5209DE4921E74C7300C7D42C /* Logging.swift in Sources */,
+				5209DE6821E77C4400C7D42C /* SearchViewModel.swift in Sources */,
 				5209DE5021E74C7300C7D42C /* GetMovieDetailsResponse.swift in Sources */,
 				5209DE4821E74C7300C7D42C /* Constants.swift in Sources */,
 				5209DE4A21E74C7300C7D42C /* Environment.swift in Sources */,

@@ -17,5 +17,6 @@ class HomeCollectionViewCell: FSPagerViewCell {
     func configure(movie: Movie){
         self.posterImage.downloadImageWithCaching(with: movie.posterPath ?? "")
         self.presaleLabel.isHidden = !(movie.presaleFlag ?? 0 == 1)
+        self.clipsToBounds = false
     }
 }

@@ -9,18 +9,22 @@
 import Foundation
 import RxSwift
 
+enum Event {
+    case onSearch
+}
+
 class HomeViewModel : BaseViewModel{
 
     var movieTableData: Observable<[Movie]>
     var movies: Variable<[Movie]> = Variable([])
+    let events = PublishSubject<Event>()
     
     override init() {
         self.movieTableData = movies.asObservable()
         super.init();
     }
-    
     func search(){
-        print("Seach On RX");
+        events.onNext(.onSearch)
     }
     func getMovies(nextPage: Int = 1) {
         let parameter = [:] as [String : Any]
