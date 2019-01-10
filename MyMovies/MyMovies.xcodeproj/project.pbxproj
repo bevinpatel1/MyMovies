@@ -12,9 +12,13 @@
 		52095A6321E71F06000BB4D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52095A6121E71F06000BB4D8 /* Main.storyboard */; };
 		52095A6521E71F07000BB4D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52095A6421E71F07000BB4D8 /* Assets.xcassets */; };
 		52095A6821E71F07000BB4D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52095A6621E71F07000BB4D8 /* LaunchScreen.storyboard */; };
+		F7F0C500C5F4217B09C8D3AD /* libPods-MyMovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE39B7544AC480290FDB56C /* libPods-MyMovies.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2508C75434297170031C32F9 /* Pods-MyMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMovies.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMovies/Pods-MyMovies.release.xcconfig"; sourceTree = "<group>"; };
+		3EE39B7544AC480290FDB56C /* libPods-MyMovies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyMovies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E35A466DC27782458065EDE /* Pods-MyMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMovies/Pods-MyMovies.debug.xcconfig"; sourceTree = "<group>"; };
 		52095A5A21E71F06000BB4D8 /* MyMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52095A5D21E71F06000BB4D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52095A5F21E71F06000BB4D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F0C500C5F4217B09C8D3AD /* libPods-MyMovies.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				52095A5C21E71F06000BB4D8 /* MyMovies */,
 				52095A5B21E71F06000BB4D8 /* Products */,
+				AF964032C9AB3A6092363071 /* Pods */,
+				9261704E704999BEAB8C2479 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = MyMovies;
 			sourceTree = "<group>";
 		};
+		9261704E704999BEAB8C2479 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EE39B7544AC480290FDB56C /* libPods-MyMovies.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF964032C9AB3A6092363071 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E35A466DC27782458065EDE /* Pods-MyMovies.debug.xcconfig */,
+				2508C75434297170031C32F9 /* Pods-MyMovies.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52095A6C21E71F07000BB4D8 /* Build configuration list for PBXNativeTarget "MyMovies" */;
 			buildPhases = (
+				8B2BC3192010514A4D562B36 /* [CP] Check Pods Manifest.lock */,
 				52095A5621E71F06000BB4D8 /* Sources */,
 				52095A5721E71F06000BB4D8 /* Frameworks */,
 				52095A5821E71F06000BB4D8 /* Resources */,
+				BFBAF6D5353F708338D11930 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B2BC3192010514A4D562B36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyMovies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFBAF6D5353F708338D11930 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyMovies/Pods-MyMovies-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/SwiftMessages/SwiftMessages.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SwiftMessages.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyMovies/Pods-MyMovies-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52095A5621E71F06000BB4D8 /* Sources */ = {
@@ -278,6 +343,7 @@
 		};
 		52095A6D21E71F07000BB4D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E35A466DC27782458065EDE /* Pods-MyMovies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +361,7 @@
 		};
 		52095A6E21E71F07000BB4D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2508C75434297170031C32F9 /* Pods-MyMovies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
