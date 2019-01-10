@@ -43,8 +43,8 @@ class HomeViewController: BaseViewController {
     }
     private func setViews(){
         self.viewModel.getMovies();
-        self.viewModel.movieTableData.bind(to: collectionView.rx.items(cellIdentifier: HomeCollectionViewCell.reuseIdentifier)){ (row, element, cell) in
-            //cell code
+        self.viewModel.movieTableData.bind(to: collectionView.rx.items(cellIdentifier: HomeCollectionViewCell.reuseIdentifier, cellType: HomeCollectionViewCell.self)){ (row, element, cell) in
+            cell.moview = element;
             }.disposed(by: disposeBag)
     }
     override func didReceiveMemoryWarning() {

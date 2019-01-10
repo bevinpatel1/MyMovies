@@ -29,6 +29,7 @@
 		5209DE5D21E74E1A00C7D42C /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE5B21E74E1900C7D42C /* RootViewModel.swift */; };
 		5209DE5E21E74E1A00C7D42C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE5C21E74E1A00C7D42C /* RootViewController.swift */; };
 		5209DE6021E74F0900C7D42C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE5F21E74F0900C7D42C /* HomeCollectionViewCell.swift */; };
+		5209DE6221E7578A00C7D42C /* UIImageView+SDWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6121E7578900C7D42C /* UIImageView+SDWebImage.swift */; };
 		52E0B39321E7420300759455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0B39221E7420300759455 /* AppDelegate.swift */; };
 		52E0B39821E7420300759455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E0B39621E7420300759455 /* Main.storyboard */; };
 		52E0B39A21E7420400759455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E0B39921E7420400759455 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		5209DE5B21E74E1900C7D42C /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		5209DE5C21E74E1A00C7D42C /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		5209DE5F21E74F0900C7D42C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		5209DE6121E7578900C7D42C /* UIImageView+SDWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SDWebImage.swift"; sourceTree = "<group>"; };
 		52E0B38F21E7420300759455 /* MyMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E0B39221E7420300759455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E0B39721E7420300759455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				5209DE3921E74C7300C7D42C /* Environment.swift */,
 				5209DE3A21E74C7300C7D42C /* ActivityIndicator.swift */,
 				5209DE3B21E74C7300C7D42C /* Extension.swift */,
+				5209DE6121E7578900C7D42C /* UIImageView+SDWebImage.swift */,
 				5209DE3C21E74C7300C7D42C /* String+CamelCase.swift */,
 				5209DE3D21E74C7300C7D42C /* Dictionary+CamelCase.swift */,
 				5209DE3E21E74C7300C7D42C /* Utils.swift */,
@@ -365,6 +368,7 @@
 				52E0B39321E7420300759455 /* AppDelegate.swift in Sources */,
 				5209DE4B21E74C7300C7D42C /* ActivityIndicator.swift in Sources */,
 				5209DE5121E74C7300C7D42C /* GetHomeResponse.swift in Sources */,
+				5209DE6221E7578A00C7D42C /* UIImageView+SDWebImage.swift in Sources */,
 				5209DE4D21E74C7300C7D42C /* String+CamelCase.swift in Sources */,
 				5209DE5E21E74E1A00C7D42C /* RootViewController.swift in Sources */,
 				5209DE2C21E74BEE00C7D42C /* BaseViewModel.swift in Sources */,

@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-300" y="-182"/>
         </scene>
-        <!--Title-->
+        <!--Movie-->
         <scene sceneID="INI-s3-Asq">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="cZ0-4d-e2K" customClass="HomeViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,8 +31,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-Sy-ZTz">
-                                <rect key="frame" x="0.0" y="64" width="320" height="320"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LV-K7-nzz">
+                                <rect key="frame" x="20" y="74" width="49" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hcx-Sy-ZTz">
+                                <rect key="frame" x="0.0" y="92" width="320" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="Urc-I6-Kri"/>
@@ -54,7 +60,7 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8C-ex-ELg">
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="260"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PR9-ZV-lVv">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PR9-ZV-lVv">
                                                             <rect key="frame" x="0.0" y="0.0" width="170" height="232"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -64,6 +70,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kz0-yU-M84">
                                                             <rect key="frame" x="0.0" y="232" width="170" height="28"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="28" id="jkX-N1-S8f"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="BUY TICKET">
                                                                 <color key="titleColor" red="1" green="0.92156862750000001" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,7 +80,7 @@
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  PRE-SELE  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvL-oP-x7E">
                                                             <rect key="frame" x="10" y="10" width="61" height="20"/>
-                                                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="0.33575496495327101" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="0.51013069509345799" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="7dG-Xe-UcD"/>
                                                                 <constraint firstAttribute="width" constant="61" id="crd-6Y-gV1"/>
@@ -114,8 +123,8 @@
                                             <constraint firstItem="z8C-ex-ELg" firstAttribute="top" secondItem="PV3-C0-mho" secondAttribute="top" id="b90-0I-aEY"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="buyButton" destination="Kz0-yU-M84" id="wev-Fu-lxy"/>
                                             <outlet property="imageView" destination="PR9-ZV-lVv" id="09E-PT-ru2"/>
+                                            <outlet property="presaleLabel" destination="lvL-oP-x7E" id="pgR-FB-k8G"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -123,13 +132,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Hcx-Sy-ZTz" firstAttribute="top" secondItem="2LV-K7-nzz" secondAttribute="bottom" id="1x7-sX-mEh"/>
+                            <constraint firstItem="2LV-K7-nzz" firstAttribute="leading" secondItem="AxT-in-12n" secondAttribute="leading" constant="20" id="8nD-A0-ewq"/>
                             <constraint firstItem="Hcx-Sy-ZTz" firstAttribute="leading" secondItem="AxT-in-12n" secondAttribute="leading" id="JQA-Pm-VNC"/>
                             <constraint firstItem="AxT-in-12n" firstAttribute="trailing" secondItem="Hcx-Sy-ZTz" secondAttribute="trailing" id="Spe-fx-Sq7"/>
-                            <constraint firstItem="Hcx-Sy-ZTz" firstAttribute="top" secondItem="AxT-in-12n" secondAttribute="top" id="fRd-VD-Gdf"/>
+                            <constraint firstItem="2LV-K7-nzz" firstAttribute="top" secondItem="AxT-in-12n" secondAttribute="top" constant="10" id="s3k-og-frx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AxT-in-12n"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="eIR-RS-mqC">
+                    <navigationItem key="navigationItem" title="Movie" id="eIR-RS-mqC">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="MCb-cE-Svs"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
