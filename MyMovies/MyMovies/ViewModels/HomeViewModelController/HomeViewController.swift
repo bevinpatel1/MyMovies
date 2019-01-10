@@ -60,14 +60,11 @@ class HomeViewController: BaseViewController{
     private func setPager(){
         self.pagerView.register(UINib(nibName: HomeCollectionViewCell.reuseIdentifier, bundle:nil), forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
         self.pagerView.isInfinite = true
-        self.pagerView.interitemSpacing = 20
-        self.pagerView.contentMode = .scaleAspectFit
         self.pagerView.automaticSlidingInterval = 3.0
+        self.pagerView.itemSize = CGSize(width: 170, height: 260)
         
-        let transform = CGAffineTransform(scaleX: 1, y: 1)
-        self.pagerView.itemSize = CGSize(width: 170, height: 260).applying(transform)
-        self.pagerView.decelerationDistance = FSPagerView.automaticDistance
         self.pagerView.transformer = FSPagerViewTransformer(type:.linear)
+        self.pagerView.transformer?.minimumScale = 0.9
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
