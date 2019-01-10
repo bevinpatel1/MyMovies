@@ -23,31 +23,38 @@ class HomeViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setBinding();
-        self.setViews();
-    }
-    private func setBinding(){
-        searchBarButton.rx.tap.bind(onNext: viewModel.search).disposed(by: disposeBag)
-        viewModel.alertDialog.observeOn(MainScheduler.instance)
-            .subscribe(onNext: {[weak self] (title, message) in
-                guard let `self` = self else {return}
-                self.showAlertDialogue(title: title, message: message)
-            }).disposed(by: disposeBag)
-        
-        viewModel.isLoading
-            .distinctUntilChanged()
-            .drive(onNext: { [weak self] (isLoading) in
-                guard let `self` = self else { return }
-                self.hideActivityIndicator()
-                if isLoading {
-                    self.showActivityIndicator()
-                }
-            })
-            .disposed(by: disposeBag)
-    }
-    private func setViews(){
-        self.setPager();
         self.viewModel.getMovies();
+    }
+    override func setUI() {
+        super.setUI();
+        self.configureFSPager();
+    }
+    private func configureFSPager(){
+        self.pagerView.register(UINib(nibName: HomeCollectionViewCell.reuseIdentifier, bundle:nil), forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
+        self.pagerView.isInfinite = true
+        self.pagerView.automaticSlidingInterval = 3.0
+        self.pagerView.itemSize = CGSize(width: 170, height: 260)
+        
+        self.pagerView.transformer = FSPagerViewTransformer(type:.linear)
+        self.pagerView.transformer?.minimumScale = 0.9
+    }
+    override func setEventBinding() {
+        super.setEventBinding();
+        searchBarButton.rx.tap.bind(onNext: viewModel.search).disposed(by: disposeBag)
+        viewModel.alertDialog.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (title, message) in
+            guard let `self` = self else {return}
+            self.showAlertDialogue(title: title, message: message)
+        }).disposed(by: disposeBag)
+        viewModel.isLoading.distinctUntilChanged().drive(onNext: { [weak self] (isLoading) in
+            guard let `self` = self else { return }
+            self.hideActivityIndicator()
+            if isLoading {
+                self.showActivityIndicator()
+            }
+        }).disposed(by: disposeBag)
+    }
+    override func setDataBinding() {
+        super.setDataBinding();
         
         self.viewModel.movies.asObservable().observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] _ in
             guard let `self` = self else {return}
@@ -56,15 +63,6 @@ class HomeViewController: BaseViewController{
             self.movieNameLabel.text = self.viewModel.movies.value.first?.title ?? ""
             self.movieTypeLabel.text = self.viewModel.movies.value.first?.genreString() ?? ""
         }).disposed(by: disposeBag)
-    }
-    private func setPager(){
-        self.pagerView.register(UINib(nibName: HomeCollectionViewCell.reuseIdentifier, bundle:nil), forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
-        self.pagerView.isInfinite = true
-        self.pagerView.automaticSlidingInterval = 3.0
-        self.pagerView.itemSize = CGSize(width: 170, height: 260)
-        
-        self.pagerView.transformer = FSPagerViewTransformer(type:.linear)
-        self.pagerView.transformer?.minimumScale = 0.9
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

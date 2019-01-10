@@ -11,12 +11,16 @@ import UIKit
 
 func viewController(forViewModel viewModel: Any) -> UIViewController? {
     switch viewModel {
-    case let viewModel as RootViewModel:
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController
+    case let viewModel as AppRootViewModel:
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AppRootViewController") as? AppRootViewController
         viewController?.viewModel = viewModel
         return viewController
     case let viewModel as HomeViewModel:
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+        viewController?.viewModel = viewModel;
+        return viewController;
+    case let viewModel as SearchRootViewModel:
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchRootViewController") as? SearchRootViewController
         viewController?.viewModel = viewModel;
         return viewController;
     case let viewModel as SearchViewModel:

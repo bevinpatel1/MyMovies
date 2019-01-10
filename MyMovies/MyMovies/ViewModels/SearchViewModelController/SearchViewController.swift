@@ -11,8 +11,17 @@ import UIKit
 class SearchViewController: BaseViewController {
 
     var viewModel : SearchViewModel!;
+    let searchBar = UISearchBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func setUI() {
+        super.setUI()
+        searchBar.tintColor = UIColor.black;
+        searchBar.barStyle = .blackTranslucent
+        searchBar.showsCancelButton = true;
+        searchBar.sizeToFit()
+        self.navigationItem.titleView = searchBar
     }
 }

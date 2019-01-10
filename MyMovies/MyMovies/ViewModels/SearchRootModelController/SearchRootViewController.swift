@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  SearchRootViewController.swift
 //  MyMovies
 //
 //  Created by MAC193 on 1/10/19.
@@ -9,9 +9,9 @@
 import UIKit
 import RxSwift
 
-class RootViewController: UINavigationController {
+class SearchRootViewController: UINavigationController {
     private let disposeBag = DisposeBag()
-    var viewModel: RootViewModel!
+    var viewModel: SearchRootViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,10 @@ class RootViewController: UINavigationController {
                     
                 case .pop(let animated):
                     _ = self?.popViewController(animated: animated)
+                
+                case .present(let viewModel, let animated):
+                    guard let viewController = viewController(forViewModel: viewModel) else { return }
+                    self?.present(viewController, animated: animated)
                 }
         }).disposed(by: disposeBag)
     }

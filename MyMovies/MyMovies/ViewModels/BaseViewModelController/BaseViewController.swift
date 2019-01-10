@@ -15,6 +15,18 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUI();
+        self.setEventBinding();
+        self.setDataBinding();
+    }
+    func setUI(){
+        
+    }
+    func setEventBinding(){
+        
+    }
+    func setDataBinding(){
+        
     }
     func showAlertDialogue( title: String , message: String){
         
