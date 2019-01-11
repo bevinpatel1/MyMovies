@@ -12,15 +12,24 @@ import RxSwift
 
 class NowShowingViewModel: BaseViewModel {
     
+    let searchString            : String!
+    var pageNumber              : NSInteger = 1
     var listMoviesObservable    : Observable<[MovieList]>
-    var listMoviesVariable      : Variable<[MovieList]> = Variable([])
+    var listMoviesVariable      : Variable<[MovieList]>  = Variable([])
+    var loadMoreCall            : PublishSubject<Void>   = PublishSubject<Void>()
     
-    override init() {
+    init(searchString : String) {
+        self.searchString = searchString;
         self.listMoviesObservable = listMoviesVariable.asObservable()
         super.init();
+        
+        self.loadMoreCall.asObservable().subscribe(onNext:{[weak self] _ in
+            guard let `self` = self else {return}
+            self.getMovies(pageNumber: self.pageNumber)
+        }).disposed(by: disposeBag)
     }
-    func getMovies(pageNumber : Int = 1) {
-        let parameter = [:] as [String : Any]
+    func getMovies(pageNumber : NSInteger) {
+        let parameter = ["keyword":searchString ?? "", "type":"nowshowing", "offset":pageNumber] as [String : Any]
         
         API.shared.getListData(param: parameter)
             .trackActivity(pageNumber==1 ? isLoading : ActivityIndicator())
@@ -31,7 +40,8 @@ class NowShowingViewModel: BaseViewModel {
                 case .next(let result):
                     switch result {
                     case .success(let response):
-                        self.listMoviesVariable.value = response.results ?? [];
+                        self.pageNumber += 1
+                        self.listMoviesVariable.value.append(contentsOf: response.results ?? []);
                     case .failure(let error):
                         if error.code == InternetConnectionErrorCode.offline.rawValue {
                             self.alertDialog.onNext((NSLocalizedString("Network error", comment: ""), error.message))

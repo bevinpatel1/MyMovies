@@ -39,6 +39,9 @@ class SearchViewModel: BaseViewModel {
     func onDelete(indexPath : IndexPath){
         self.remove(index: indexPath.row)
     }
+    func onSelect(indexPath : IndexPath){
+        events.onNext(.onMovieList(search: searchKeys.value[indexPath.row].title ?? ""))
+    }
     private func loadRecent()->[SearchKey]{
         if let addressData = UserDefaults.standard.object(forKey:"SearchHistrory") as? Data{
             let addressArray = NSKeyedUnarchiver.unarchiveObject(with: addressData)

@@ -38,6 +38,9 @@ class SearchViewController: BaseViewController {
         self.tableView.rx.itemDeleted.subscribe(onNext: { [unowned self] indexPath in
             self.viewModel.onDelete(indexPath: indexPath)
         }).disposed(by: disposeBag)
+        self.tableView.rx.itemSelected.subscribe(onNext:{ [unowned self] indexPath in
+            self.viewModel.onSelect(indexPath: indexPath)
+        }).disposed(by: disposeBag)
     }
     override func setDataBinding() {
         self.viewModel.searchTableData

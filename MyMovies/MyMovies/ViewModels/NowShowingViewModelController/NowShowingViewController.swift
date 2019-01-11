@@ -15,7 +15,7 @@ class NowShowingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.getMovies(pageNumber: 1)
+        self.viewModel.getMovies(pageNumber: self.viewModel.pageNumber)
     }
     override func setUI() {
         super.setUI()
@@ -43,5 +43,14 @@ class NowShowingViewController: BaseViewController {
             .bind(to: tableView.rx.items(cellIdentifier: MovieListTableCell.reuseIdentifier, cellType: MovieListTableCell.self)) { (row, element, cell) in
                 cell.configure(movie: element)
             }.disposed(by: disposeBag)
+        tableView.rx
+            .willDisplayCell.filter({[weak self] (cell, indexPath) in
+                guard let `self` = self else { return false }
+                return (indexPath.row + 1) == self.tableView.numberOfRows(inSection: indexPath.section) - 3
+            }).throttle(1.0, scheduler: MainScheduler.instance).map({ event -> Void in
+                return Void()
+            })
+            .bind(to: self.viewModel.loadMoreCall)
+            .disposed(by: disposeBag)
     }
 }

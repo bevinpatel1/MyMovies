@@ -24,6 +24,14 @@ class SearchRootViewModel : BaseViewModel{
         return searchViewModel
     }
     private func showMovieList(searchString : String){
-        self.navigationStackActions.onNext(NavigationStackAction.push(viewModel: MovieListViewModel(searchString: searchString), animated: true))
+        self.navigationStackActions.onNext(NavigationStackAction.push(viewModel: MovieListViewModel(searchString:searchString ,
+                                                                                                    nowShowingViewController: self.nowShowingList(searchString: searchString),
+                                                                                                    comingSoonViewController: self.comingSoonList(searchString: searchString)), animated: true))
+    }
+    private func nowShowingList(searchString : String)->UIViewController?{
+        return viewController(forViewModel: NowShowingViewModel(searchString: searchString))
+    }
+    private func comingSoonList(searchString : String)->UIViewController?{
+        return viewController(forViewModel: NowShowingViewModel(searchString: searchString))
     }
 }
