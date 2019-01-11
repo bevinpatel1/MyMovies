@@ -55,6 +55,6 @@ class BaseViewController: UIViewController {
         if let _containerView = _containerView {
             containerView = _containerView
         }
-        MBProgressHUD.hideAllHUDs(for: containerView, animated: true)
+        MBProgressHUD.hide(for: containerView, animated: true)
     }
 }

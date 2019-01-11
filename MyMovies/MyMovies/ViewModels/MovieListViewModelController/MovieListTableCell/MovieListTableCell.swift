@@ -22,7 +22,7 @@ class MovieListTableCell: UITableViewCell {
     @IBOutlet private weak var ratingFlaotView  : FloatRatingView!
     
     func configure(movie: MovieList){
-        self.posterImageView.downloadImageWithCaching(with: movie.posterPath ?? "")
+        self.posterImageView.downloadImageWithCaching(with: movie.posterPath ?? "", placeholderImage: UIImage(named: "placeHolder"))
         self.titleLabel.text = movie.title ?? ""
         self.ratingLabel.text = String(format: "%.2f", movie.rate ?? 0.0)
         self.certificateLabel.text = movie.ageCategory ?? ""

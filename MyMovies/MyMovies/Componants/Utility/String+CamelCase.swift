@@ -10,23 +10,13 @@ import Foundation
 import UIKit
 
 extension String {
-    /// Underscore string to lowerCamelCase.
     var underscoreToCamelCase: String {
-        
-        let underscore = CharacterSet(charactersIn: "_")
-        var items: [String] = self.components(separatedBy: underscore)
-        
-        var start: String = items.first ?? ""
-        let first = String(start.characters.prefix(1)).lowercased()
-        let other = String(start.characters.dropFirst())
-        start =  first + other
-        
+        var items = self.components(separatedBy: "_")
+        var camelCase = ""
+        let first = items.first?.lowercased() ?? ""
         items.remove(at: 0)
-        
-        let camelCased: String =  items.reduce(start) { (result, i) -> String in
-            result + i.capitalized
-        }
-        return camelCased
+        camelCase = items.reduce(first, {$0 + $1.capitalizingFirstLetter()})
+        return camelCase
     }
     func capitalizingFirstLetter() -> String {
         return prefix(1).uppercased() + dropFirst()

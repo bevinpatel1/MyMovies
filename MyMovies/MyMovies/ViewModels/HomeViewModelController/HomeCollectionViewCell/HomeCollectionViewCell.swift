@@ -16,7 +16,7 @@ class HomeCollectionViewCell: FSPagerViewCell {
     @IBOutlet private var presaleLabel  : UILabel!
     
     func configure(movie: Movie){
-        self.posterImage.downloadImageWithCaching(with: movie.posterPath ?? "")
+        self.posterImage.downloadImageWithCaching(with: movie.posterPath ?? "", placeholderImage: UIImage(named: "placeHolder"))
         self.presaleLabel.isHidden = !(movie.presaleFlag ?? 0 == 1)
         self.clipsToBounds = false
     }

@@ -15,7 +15,7 @@ enum Server {
 }
 class Environment {
     static let server:Server    =   .developement
-    static let debug:Bool       =   true
+    static let debug:Bool       =   false
     
     class func APIBasePath() -> String {
         switch self.server {
