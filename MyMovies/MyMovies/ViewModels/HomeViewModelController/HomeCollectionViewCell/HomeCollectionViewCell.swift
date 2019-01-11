@@ -23,7 +23,7 @@ class HomeCollectionViewCell: FSPagerViewCell {
     override var isSelected: Bool{
         didSet{
             if isSelected{
-                buyButton.superview?.backgroundColor = UIColor.darkGray;
+                buyButton.superview?.backgroundColor = UIColor(displayP3Red: 31/255, green: 43/255, blue: 82/255, alpha: 1);
                 buyButton.isHidden = false
             }else{
                 buyButton.superview?.backgroundColor = UIColor.clear;
