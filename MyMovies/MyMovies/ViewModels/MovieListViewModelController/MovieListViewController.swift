@@ -14,6 +14,8 @@ class MovieListViewController: BaseViewController {
     
     @IBOutlet var segmentedControl: MXSegmentedControl!
     var pageViewController : UIPageViewController?
+    lazy var nowShowingViewController = viewController(forViewModel: NowShowingViewModel())
+    lazy var comingSoonViewController = viewController(forViewModel: ComingSoonViewModel())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +25,12 @@ class MovieListViewController: BaseViewController {
         segmentedControl.append(title: "Now Showing").set(title: #colorLiteral(red: 0.08598647267, green: 0.093843095, blue: 0.1104642078, alpha: 1), for: .selected)
         segmentedControl.append(title: "Comming Soon").set(title: #colorLiteral(red: 0.08598647267, green: 0.093843095, blue: 0.1104642078, alpha: 1), for: .selected)
         segmentedControl.indicator.lineView.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        if let controller = nowShowingViewController{
+            self.pageViewController?.setViewControllers([controller], direction: .forward, animated: false)
+        }
     }
     override func setEventBinding() {
         super.setEventBinding()
-        viewModel.pagerStackActions.subscribe(onNext: {[weak self] pagerStackAction in
-            switch pagerStackAction{
-            case .show(let viewModel,let direction,let animated):
-                guard let viewController = viewController(forViewModel: viewModel) else { return }
-                self?.pageViewController?.setViewControllers([viewController], direction: direction, animated: animated)
-            }
-        }).disposed(by: disposeBag)
     }
     override func setDataBinding() {
         super.setDataBinding()
@@ -40,9 +38,14 @@ class MovieListViewController: BaseViewController {
     @IBAction func onChangeSegment(_ sender: MXSegmentedControl) {
         switch sender.selectedIndex {
         case 0:
-            self.viewModel.onNowShowing()
+            if let controller = nowShowingViewController{
+                self.pageViewController?.setViewControllers([controller], direction: .reverse, animated: true)
+            }
+            
         default:
-            self.viewModel.onComingSoon()
+            if let controller = comingSoonViewController{
+                self.pageViewController?.setViewControllers([controller], direction: .forward, animated: true)
+            }
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

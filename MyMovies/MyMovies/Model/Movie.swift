@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Movie: Codable {
+class Movie : Codable {
     
     var id          : String?
     var title       : String?
@@ -36,8 +36,5 @@ class Movie: Codable {
         else{
             return ""
         }
-    }
-    class Genre: Codable{
-        var name: String?
     }
 }
