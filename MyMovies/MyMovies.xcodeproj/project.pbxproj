@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52095EDC21E8665300435BF1 /* SearchKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52095EDB21E8665300435BF1 /* SearchKey.swift */; };
 		5209DE2C21E74BEE00C7D42C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE2B21E74BEE00C7D42C /* BaseViewModel.swift */; };
 		5209DE4321E74C7300C7D42C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE3121E74C7300C7D42C /* APIManager.swift */; };
 		5209DE4421E74C7300C7D42C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE3221E74C7300C7D42C /* APIRouter.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		001C9914D0D539FBD4879574 /* Pods_MyMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02EA847E002F8B6294BBC59B /* Pods-MyMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMovies/Pods-MyMovies.debug.xcconfig"; sourceTree = "<group>"; };
+		52095EDB21E8665300435BF1 /* SearchKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKey.swift; sourceTree = "<group>"; };
 		5209DE2B21E74BEE00C7D42C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5209DE3121E74C7300C7D42C /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		5209DE3221E74C7300C7D42C /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -155,18 +157,11 @@
 		5209DE3F21E74C7300C7D42C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5209DE4021E74C7300C7D42C /* CoreDataModel */,
 				5209DE4121E74C7300C7D42C /* GetMovieDetailsResponse.swift */,
 				5209DE4221E74C7300C7D42C /* GetHomeResponse.swift */,
+				52095EDB21E8665300435BF1 /* SearchKey.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		5209DE4021E74C7300C7D42C /* CoreDataModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
 		5209DE5521E74CB400C7D42C /* AppRootViewModelController */ = {
@@ -418,6 +413,7 @@
 				5209DE4721E74C7300C7D42C /* API.swift in Sources */,
 				5209DE5A21E74E0400C7D42C /* HomeViewController.swift in Sources */,
 				5209DE4921E74C7300C7D42C /* Logging.swift in Sources */,
+				52095EDC21E8665300435BF1 /* SearchKey.swift in Sources */,
 				5209DE6F21E7939700C7D42C /* SearchRootViewController.swift in Sources */,
 				5209DE6E21E7939700C7D42C /* SearchRootViewModel.swift in Sources */,
 				5209DE6821E77C4400C7D42C /* SearchViewModel.swift in Sources */,

@@ -28,17 +28,17 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="cZ0-4d-e2K" customClass="HomeViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U50-35-zvj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LV-K7-nzz">
-                                <rect key="frame" x="20" y="74" width="49" height="18"/>
+                                <rect key="frame" x="20" y="10" width="49" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpf-We-ibf" customClass="FSPagerView" customModule="FSPagerView">
-                                <rect key="frame" x="0.0" y="92" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="320"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="OnO-RQ-cnr"/>
@@ -55,13 +55,13 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WA-VK-bDf">
-                                <rect key="frame" x="155.5" y="412" width="9" height="20.5"/>
+                                <rect key="frame" x="155.5" y="348" width="9" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yS-xp-fLp">
-                                <rect key="frame" x="156.5" y="432.5" width="7" height="14.5"/>
+                                <rect key="frame" x="156.5" y="368.5" width="7" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
                     <navigationItem key="navigationItem" title="Movie" id="eIR-RS-mqC">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="MCb-cE-Svs"/>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="movieNameLabel" destination="4WA-VK-bDf" id="QLO-in-1gH"/>
                         <outlet property="movieTypeLabel" destination="0yS-xp-fLp" id="tb5-sW-0ps"/>
@@ -102,12 +102,38 @@
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="DI1-G2-qvS" customClass="SearchViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KZe-rG-6uP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1s6-CS-Ozx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="ndg-hR-dY5">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ndg-hR-dY5" id="DgF-ls-4o6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bYp-sM-oJf" firstAttribute="bottom" secondItem="1s6-CS-Ozx" secondAttribute="bottom" id="SkZ-wM-3sh"/>
+                            <constraint firstItem="1s6-CS-Ozx" firstAttribute="top" secondItem="bYp-sM-oJf" secondAttribute="top" id="XfQ-5v-4Og"/>
+                            <constraint firstItem="bYp-sM-oJf" firstAttribute="trailing" secondItem="1s6-CS-Ozx" secondAttribute="trailing" id="cVj-Dw-SFj"/>
+                            <constraint firstItem="1s6-CS-Ozx" firstAttribute="leading" secondItem="bYp-sM-oJf" secondAttribute="leading" id="fS5-V7-C5g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bYp-sM-oJf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yyA-wL-F5A"/>
+                    <navigationItem key="navigationItem" id="CBY-iI-0p8"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="1s6-CS-Ozx" id="zmj-CH-i3U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcw-C5-B2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
