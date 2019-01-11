@@ -12,7 +12,7 @@ import RxCocoa
 
 class SearchViewController: BaseViewController {
 
-    var viewModel : SearchViewModel!;
+    var viewModel : SearchViewModel!
     let searchBar = UISearchBar()
     
     @IBOutlet var tableView: UITableView!
@@ -26,14 +26,14 @@ class SearchViewController: BaseViewController {
         searchBar.barStyle = .blackTranslucent
         searchBar.showsCancelButton = true
         searchBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        searchBar.sizeToFit();
-        searchBar.becomeFirstResponder();
+        searchBar.sizeToFit()
+        searchBar.becomeFirstResponder()
         self.navigationItem.titleView = searchBar
         tableView.tableFooterView = UIView()
     }
     override func setEventBinding() {
-        self.searchBar.rx.cancelButtonClicked.bind(onNext: viewModel.cancelTap).disposed(by: disposeBag);
-        self.searchBar.rx.searchButtonClicked.bind(onNext: viewModel.serchTap).disposed(by: disposeBag);
+        self.searchBar.rx.cancelButtonClicked.bind(onNext: viewModel.cancelTap).disposed(by: disposeBag)
+        self.searchBar.rx.searchButtonClicked.bind(onNext: viewModel.serchTap).disposed(by: disposeBag)
         self.searchBar.rx.text.orEmpty.bind(to: viewModel.searchString).disposed(by: disposeBag)
         self.tableView.rx.itemDeleted.subscribe(onNext: { [unowned self] indexPath in
             self.viewModel.onDelete(indexPath: indexPath)

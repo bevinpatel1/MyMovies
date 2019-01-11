@@ -64,7 +64,7 @@ class SearchViewModel: BaseViewModel {
         UserDefaults.standard.synchronize()
     }
     private func remove(index : NSInteger){
-        searchKeys.value.remove(at: index);
+        searchKeys.value.remove(at: index)
         let recentData = NSKeyedArchiver.archivedData(withRootObject: searchKeys.value)
         UserDefaults.standard.set(recentData, forKey:"SearchHistrory")
         UserDefaults.standard.synchronize()

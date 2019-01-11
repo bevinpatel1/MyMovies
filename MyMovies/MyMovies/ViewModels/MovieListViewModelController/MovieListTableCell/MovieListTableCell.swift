@@ -26,7 +26,7 @@ class MovieListTableCell: UITableViewCell {
         self.titleLabel.text = movie.title ?? ""
         self.ratingLabel.text = String(format: "%.2f", movie.rate ?? 0.0)
         self.certificateLabel.text = movie.ageCategory ?? ""
-        self.releaseLabel.text = "\(movie.releaseDate)"
+        self.releaseLabel.text = movie.formatedDate
         self.infoLabel.text = movie.description ?? ""
         self.ratingFlaotView.rating = Double((movie.rate ?? Float(1.0)) / Float(2.0))
     }

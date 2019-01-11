@@ -21,7 +21,7 @@ class HomeViewModel : BaseViewModel{
     
     override init() {
         self.homeMoviesObservable = homeMoviesVariable.asObservable()
-        super.init();
+        super.init()
     }
     func search(){
         events.onNext(.onSearch)
@@ -38,7 +38,7 @@ class HomeViewModel : BaseViewModel{
                 case .next(let result):
                     switch result {
                     case .success(let response):
-                        self.homeMoviesVariable.value = response.results ?? [];
+                        self.homeMoviesVariable.value = response.results ?? []
                     case .failure(let error):
                         if error.code == InternetConnectionErrorCode.offline.rawValue {
                             self.alertDialog.onNext((NSLocalizedString("Network error", comment: ""), error.message))

@@ -15,7 +15,7 @@ class MovieListViewModel: BaseViewModel {
     var comingSoonViewController : UIViewController?
     
     init(searchString : String, nowShowingViewController : UIViewController?, comingSoonViewController : UIViewController?) {
-        super.init();
+        super.init()
         self.nowShowingViewController = nowShowingViewController
         self.comingSoonViewController = comingSoonViewController
     }

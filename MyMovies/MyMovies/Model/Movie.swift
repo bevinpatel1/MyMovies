@@ -29,12 +29,18 @@ class Movie : Codable {
         case presaleFlag    = "presale_flag"
         case genreIds       = "genre_ids"
     }
-    func genreString()->String{
+    func formatedGenre()->String{
         if let genreIdsArray = genreIds{
             return genreIdsArray.map({$0.name ?? ""}).joined(separator: ", ")
         }
         else{
             return ""
         }
+    }
+    var formatedDate: String{
+        let date = Date.init(timeIntervalSince1970: TimeInterval.init(releaseDate ?? 0))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        return dateFormatter.string(from: date)
     }
 }

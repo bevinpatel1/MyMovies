@@ -49,7 +49,7 @@ class MovieListViewController: BaseViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let pageController = segue.destination as? UIPageViewController{
-            self.pageViewController = pageController;
+            self.pageViewController = pageController
         }
     }
 }
@@ -57,7 +57,7 @@ extension MovieListViewController : UIPageViewControllerDelegate,UIPageViewContr
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if let nowShowingViewController = self.viewModel?.nowShowingViewController{
             if viewController.isEqual(nowShowingViewController){
-                return self.viewModel?.comingSoonViewController;
+                return self.viewModel?.comingSoonViewController
             }
         }
         return nil
@@ -65,7 +65,7 @@ extension MovieListViewController : UIPageViewControllerDelegate,UIPageViewContr
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if let comingSoonViewController = self.viewModel?.comingSoonViewController{
             if viewController.isEqual(comingSoonViewController){
-                return self.viewModel?.nowShowingViewController;
+                return self.viewModel?.nowShowingViewController
             }
         }
         return nil

@@ -19,9 +19,9 @@ class ComingSoonViewModel: BaseViewModel {
     var loadMoreCall            : PublishSubject<Void>   = PublishSubject<Void>()
     
     init(searchString : String) {
-        self.searchString = searchString;
+        self.searchString = searchString
         self.listMoviesObservable = listMoviesVariable.asObservable()
-        super.init();
+        super.init()
         
         self.loadMoreCall.asObservable().subscribe(onNext:{[weak self] _ in
             guard let `self` = self else {return}
@@ -41,7 +41,7 @@ class ComingSoonViewModel: BaseViewModel {
                     switch result {
                     case .success(let response):
                         self.pageNumber += 1
-                        self.listMoviesVariable.value.append(contentsOf: response.results ?? []);
+                        self.listMoviesVariable.value.append(contentsOf: response.results ?? [])
                     case .failure(let error):
                         if error.code == InternetConnectionErrorCode.offline.rawValue {
                             self.alertDialog.onNext((NSLocalizedString("Network error", comment: ""), error.message))

@@ -13,7 +13,7 @@ import FSPagerView
 
 class HomeViewController: BaseViewController{
     
-    var viewModel : HomeViewModel!;
+    var viewModel : HomeViewModel!
     
     @IBOutlet var searchBarButton: UIBarButtonItem!
     @IBOutlet var titleLabel: UILabel!
@@ -23,11 +23,11 @@ class HomeViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.getHomeData();
+        self.viewModel.getHomeData()
     }
     override func setUI() {
-        super.setUI();
-        self.configureFSPager();
+        super.setUI()
+        self.configureFSPager()
     }
     private func configureFSPager(){
         self.pagerView.register(UINib(nibName: HomeCollectionViewCell.reuseIdentifier, bundle:nil),
@@ -40,7 +40,7 @@ class HomeViewController: BaseViewController{
         self.pagerView.transformer?.minimumScale = 0.9
     }
     override func setEventBinding() {
-        super.setEventBinding();
+        super.setEventBinding()
         searchBarButton.rx.tap.bind(onNext: viewModel.search).disposed(by: disposeBag)
         viewModel.alertDialog.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (title, message) in
             guard let `self` = self else {return}
@@ -55,14 +55,14 @@ class HomeViewController: BaseViewController{
         }).disposed(by: disposeBag)
     }
     override func setDataBinding() {
-        super.setDataBinding();
+        super.setDataBinding()
         
         self.viewModel.homeMoviesVariable.asObservable().observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] _ in
             guard let `self` = self else {return}
             self.pagerView.reloadData()
-            self.titleLabel.isHidden = self.viewModel.homeMoviesVariable.value.count > 0 ? false : true;
+            self.titleLabel.isHidden = self.viewModel.homeMoviesVariable.value.count > 0 ? false : true
             self.movieNameLabel.text = self.viewModel.homeMoviesVariable.value.first?.title ?? ""
-            self.movieTypeLabel.text = self.viewModel.homeMoviesVariable.value.first?.genreString() ?? ""
+            self.movieTypeLabel.text = self.viewModel.homeMoviesVariable.value.first?.formatedGenre() ?? ""
         }).disposed(by: disposeBag)
     }
     override func didReceiveMemoryWarning() {
@@ -81,6 +81,6 @@ extension HomeViewController : FSPagerViewDelegate,FSPagerViewDataSource{
     func pagerViewDidScroll(_ pagerView: FSPagerView) {
         let page = pagerView.currentIndex
         self.movieNameLabel.text = self.viewModel.homeMoviesVariable.value[Int(page)].title ?? ""
-        self.movieTypeLabel.text = self.viewModel.homeMoviesVariable.value[Int(page)].genreString()
+        self.movieTypeLabel.text = self.viewModel.homeMoviesVariable.value[Int(page)].formatedGenre()
     }
 }

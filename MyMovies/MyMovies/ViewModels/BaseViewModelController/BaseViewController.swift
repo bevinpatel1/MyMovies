@@ -15,9 +15,9 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUI();
-        self.setEventBinding();
-        self.setDataBinding();
+        self.setUI()
+        self.setEventBinding()
+        self.setDataBinding()
     }
     func setUI(){
         
