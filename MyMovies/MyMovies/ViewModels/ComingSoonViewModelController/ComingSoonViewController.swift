@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ComingSoonViewController: BaseViewController {
     var viewModel : ComingSoonViewModel!
@@ -14,7 +15,7 @@ class ComingSoonViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.getMovies(pageNumber: 0)
+        self.viewModel.getMovies(pageNumber: 1)
     }
     override func setUI() {
         super.setUI()
@@ -23,6 +24,17 @@ class ComingSoonViewController: BaseViewController {
     }
     override func setEventBinding() {
         super.setEventBinding()
+        viewModel.alertDialog.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (title, message) in
+            guard let `self` = self else {return}
+            self.showAlertDialogue(title: title, message: message)
+        }).disposed(by: disposeBag)
+        viewModel.isLoading.distinctUntilChanged().drive(onNext: { [weak self] (isLoading) in
+            guard let `self` = self else { return }
+            self.hideActivityIndicator()
+            if isLoading {
+                self.showActivityIndicator()
+            }
+        }).disposed(by: disposeBag)
     }
     override func setDataBinding() {
         super.setDataBinding()
