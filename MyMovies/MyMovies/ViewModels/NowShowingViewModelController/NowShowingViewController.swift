@@ -19,6 +19,7 @@ class NowShowingViewController: BaseViewController {
     }
     override func setUI() {
         super.setUI()
+        self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib(nibName: MovieListTableCell.reuseIdentifier, bundle: Bundle.main),
                                 forCellReuseIdentifier: MovieListTableCell.reuseIdentifier)
     }

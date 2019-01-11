@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 
 class MovieListViewModel: BaseViewModel {
-    override init() {
+    init(searchString : String) {
         super.init();
     }
 }

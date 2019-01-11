@@ -11,7 +11,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 enum SearchEvent {
-    case onMovieList
+    case onMovieList(search : String)
     case onDismiss
 }
 
@@ -34,7 +34,10 @@ class SearchViewModel: BaseViewModel {
     }
     func serchTap(){
         self.setRecent(searhcKey: SearchKey(title: searchString.value))
-        events.onNext(.onMovieList)
+        events.onNext(.onMovieList(search: searchString.value))
+    }
+    func onDelete(indexPath : IndexPath){
+        self.remove(index: indexPath.row)
     }
     private func loadRecent()->[SearchKey]{
         if let addressData = UserDefaults.standard.object(forKey:"SearchHistrory") as? Data{
@@ -54,6 +57,12 @@ class SearchViewModel: BaseViewModel {
         searchKeys.value = recentArray
         
         let recentData = NSKeyedArchiver.archivedData(withRootObject: recentArray)
+        UserDefaults.standard.set(recentData, forKey:"SearchHistrory")
+        UserDefaults.standard.synchronize()
+    }
+    private func remove(index : NSInteger){
+        searchKeys.value.remove(at: index);
+        let recentData = NSKeyedArchiver.archivedData(withRootObject: searchKeys.value)
         UserDefaults.standard.set(recentData, forKey:"SearchHistrory")
         UserDefaults.standard.synchronize()
     }
