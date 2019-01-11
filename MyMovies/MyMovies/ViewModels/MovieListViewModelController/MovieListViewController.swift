@@ -26,6 +26,7 @@ class MovieListViewController: BaseViewController {
         if let controller = self.viewModel.nowShowingViewController{
             self.pageViewController?.setViewControllers([controller], direction: .forward, animated: false)
             self.pageViewController?.delegate = self
+            self.pageViewController?.dataSource = self
         }
     }
     override func setEventBinding() {
@@ -73,10 +74,10 @@ extension MovieListViewController : UIPageViewControllerDelegate,UIPageViewContr
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         if let firstViewController = pendingViewControllers.first{
             if let comingSoonViewController = self.viewModel?.comingSoonViewController,firstViewController.isEqual(comingSoonViewController){
-                self.segmentedControl.select(index: 0, animated: true)
+                self.segmentedControl.select(index: 1, animated: true)
             }
             else{
-                self.segmentedControl.select(index: 1, animated: true)
+                self.segmentedControl.select(index: 0, animated: true)
             }
         }
     }
