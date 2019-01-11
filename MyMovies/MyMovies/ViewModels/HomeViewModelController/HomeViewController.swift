@@ -23,7 +23,7 @@ class HomeViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.getMovies();
+        self.viewModel.getHomeData();
     }
     override func setUI() {
         super.setUI();
@@ -57,12 +57,12 @@ class HomeViewController: BaseViewController{
     override func setDataBinding() {
         super.setDataBinding();
         
-        self.viewModel.movies.asObservable().observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] _ in
+        self.viewModel.homeMoviesVariable.asObservable().observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] _ in
             guard let `self` = self else {return}
             self.pagerView.reloadData()
-            self.titleLabel.isHidden = self.viewModel.movies.value.count > 0 ? false : true;
-            self.movieNameLabel.text = self.viewModel.movies.value.first?.title ?? ""
-            self.movieTypeLabel.text = self.viewModel.movies.value.first?.genreString() ?? ""
+            self.titleLabel.isHidden = self.viewModel.homeMoviesVariable.value.count > 0 ? false : true;
+            self.movieNameLabel.text = self.viewModel.homeMoviesVariable.value.first?.title ?? ""
+            self.movieTypeLabel.text = self.viewModel.homeMoviesVariable.value.first?.genreString() ?? ""
         }).disposed(by: disposeBag)
     }
     override func didReceiveMemoryWarning() {
@@ -71,16 +71,16 @@ class HomeViewController: BaseViewController{
 }
 extension HomeViewController : FSPagerViewDelegate,FSPagerViewDataSource{
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return viewModel.movies.value.count
+        return viewModel.homeMoviesVariable.value.count
     }
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseIdentifier, at: index) as! HomeCollectionViewCell
-        cell.configure(movie: viewModel.movies.value[index])
+        cell.configure(movie: viewModel.homeMoviesVariable.value[index])
         return cell
     }
     func pagerViewDidScroll(_ pagerView: FSPagerView) {
         let page = pagerView.currentIndex
-        self.movieNameLabel.text = self.viewModel.movies.value[Int(page)].title ?? ""
-        self.movieTypeLabel.text = self.viewModel.movies.value[Int(page)].genreString()
+        self.movieNameLabel.text = self.viewModel.homeMoviesVariable.value[Int(page)].title ?? ""
+        self.movieTypeLabel.text = self.viewModel.homeMoviesVariable.value[Int(page)].genreString()
     }
 }

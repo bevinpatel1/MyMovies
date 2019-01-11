@@ -44,11 +44,9 @@ class API {
             }
         })
     }
-    
-    // Call movie details API
-    func getMovieDetails(id: String,param: Parameters) -> Observable<APIResult<GetMovieDetailResponse>> {
+    func getListData(param: Parameters) -> Observable<APIResult<GetMovieListResponse>> {
         
-        return API.handleDataRequest(dataRequest: APIManager.shared.requestObservable(api: APIRouter.getMovieDetails(movieId: id, param: param))).map({ (response) -> APIResult<GetMovieDetailResponse> in
+        return API.handleDataRequest(dataRequest: APIManager.shared.requestObservable(api: APIRouter.getListData(param))).map({ (response) -> APIResult<GetMovieListResponse> in
             if (response ?? [:]).keys.contains("Error"){
                 if (response ?? [:]).keys.contains("IsInternetOff"){
                     if let isInternetOff = response!["IsInternetOff"] as? Bool{
@@ -59,13 +57,12 @@ class API {
                 }
                 return APIResult.failure(error: APICallError(critical: false, code: 1111, reason: response!["Error"] as! String, message: response!["Error"] as! String))
             }
-            let apiResponse = GetMovieDetailResponse(response: response)
+            let apiResponse = GetMovieListResponse(response: response)
             let (apiStatus, _) = (true,APICallError.init(status: .success))
             if apiStatus { return APIResult.success(value: apiResponse) }
         })
     }
-    
-    
+
     private static func handleDataRequest(dataRequest: Observable<DataRequest>) -> Observable<[String:Any]?> {
 
         if NetworkReachabilityManager()!.isReachable == false {
@@ -132,6 +129,4 @@ class API {
             })
         })
     }
-
 }
-

@@ -25,8 +25,9 @@ class SearchViewController: BaseViewController {
         searchBar.tintColor = UIColor.black
         searchBar.barStyle = .blackTranslucent
         searchBar.showsCancelButton = true
-        searchBar.becomeFirstResponder();
         searchBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        searchBar.sizeToFit();
+        searchBar.becomeFirstResponder();
         self.navigationItem.titleView = searchBar
     }
     override func setEventBinding() {
@@ -38,7 +39,6 @@ class SearchViewController: BaseViewController {
         viewModel.searchTableData
             .bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = element.title ?? ""
-            }
-            .disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
     }
 }

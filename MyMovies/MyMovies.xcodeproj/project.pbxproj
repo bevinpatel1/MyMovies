@@ -10,6 +10,8 @@
 		52095EDC21E8665300435BF1 /* SearchKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52095EDB21E8665300435BF1 /* SearchKey.swift */; };
 		52095EDF21E8742B00435BF1 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52095EDE21E8742B00435BF1 /* MovieListViewModel.swift */; };
 		52095EE121E8743E00435BF1 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52095EE021E8743E00435BF1 /* MovieListViewController.swift */; };
+		52095EE321E87B6600435BF1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52095EE221E87B6600435BF1 /* Movie.swift */; };
+		52095EE521E87B8900435BF1 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52095EE421E87B8900435BF1 /* MovieList.swift */; };
 		5209DE2C21E74BEE00C7D42C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE2B21E74BEE00C7D42C /* BaseViewModel.swift */; };
 		5209DE4321E74C7300C7D42C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE3121E74C7300C7D42C /* APIManager.swift */; };
 		5209DE4421E74C7300C7D42C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE3221E74C7300C7D42C /* APIRouter.swift */; };
@@ -24,7 +26,7 @@
 		5209DE4D21E74C7300C7D42C /* String+CamelCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE3C21E74C7300C7D42C /* String+CamelCase.swift */; };
 		5209DE4E21E74C7300C7D42C /* Dictionary+CamelCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE3D21E74C7300C7D42C /* Dictionary+CamelCase.swift */; };
 		5209DE4F21E74C7300C7D42C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE3E21E74C7300C7D42C /* Utils.swift */; };
-		5209DE5021E74C7300C7D42C /* GetMovieDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE4121E74C7300C7D42C /* GetMovieDetailsResponse.swift */; };
+		5209DE5021E74C7300C7D42C /* GetMovieListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE4121E74C7300C7D42C /* GetMovieListResponse.swift */; };
 		5209DE5121E74C7300C7D42C /* GetHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE4221E74C7300C7D42C /* GetHomeResponse.swift */; };
 		5209DE5421E74CAF00C7D42C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE5321E74CAF00C7D42C /* BaseViewController.swift */; };
 		5209DE5821E74DBB00C7D42C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE5721E74DBB00C7D42C /* HomeViewModel.swift */; };
@@ -51,6 +53,8 @@
 		52095EDB21E8665300435BF1 /* SearchKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKey.swift; sourceTree = "<group>"; };
 		52095EDE21E8742B00435BF1 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		52095EE021E8743E00435BF1 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		52095EE221E87B6600435BF1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		52095EE421E87B8900435BF1 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		5209DE2B21E74BEE00C7D42C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5209DE3121E74C7300C7D42C /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		5209DE3221E74C7300C7D42C /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -65,7 +69,7 @@
 		5209DE3C21E74C7300C7D42C /* String+CamelCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CamelCase.swift"; sourceTree = "<group>"; };
 		5209DE3D21E74C7300C7D42C /* Dictionary+CamelCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+CamelCase.swift"; sourceTree = "<group>"; };
 		5209DE3E21E74C7300C7D42C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		5209DE4121E74C7300C7D42C /* GetMovieDetailsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMovieDetailsResponse.swift; sourceTree = "<group>"; };
+		5209DE4121E74C7300C7D42C /* GetMovieListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMovieListResponse.swift; sourceTree = "<group>"; };
 		5209DE4221E74C7300C7D42C /* GetHomeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHomeResponse.swift; sourceTree = "<group>"; };
 		5209DE5321E74CAF00C7D42C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5209DE5721E74DBB00C7D42C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -171,9 +175,11 @@
 		5209DE3F21E74C7300C7D42C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5209DE4121E74C7300C7D42C /* GetMovieDetailsResponse.swift */,
 				5209DE4221E74C7300C7D42C /* GetHomeResponse.swift */,
+				5209DE4121E74C7300C7D42C /* GetMovieListResponse.swift */,
 				52095EDB21E8665300435BF1 /* SearchKey.swift */,
+				52095EE221E87B6600435BF1 /* Movie.swift */,
+				52095EE421E87B8900435BF1 /* MovieList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				5209DE4321E74C7300C7D42C /* APIManager.swift in Sources */,
 				5209DE4521E74C7300C7D42C /* APIResult.swift in Sources */,
 				5209DE4421E74C7300C7D42C /* APIRouter.swift in Sources */,
+				52095EE321E87B6600435BF1 /* Movie.swift in Sources */,
 				5209DE4C21E74C7300C7D42C /* Extension.swift in Sources */,
 				5209DE4E21E74C7300C7D42C /* Dictionary+CamelCase.swift in Sources */,
 				5209DE6A21E77C5D00C7D42C /* SearchViewController.swift in Sources */,
@@ -431,8 +438,9 @@
 				52095EDC21E8665300435BF1 /* SearchKey.swift in Sources */,
 				5209DE6F21E7939700C7D42C /* SearchRootViewController.swift in Sources */,
 				5209DE6E21E7939700C7D42C /* SearchRootViewModel.swift in Sources */,
+				52095EE521E87B8900435BF1 /* MovieList.swift in Sources */,
 				5209DE6821E77C4400C7D42C /* SearchViewModel.swift in Sources */,
-				5209DE5021E74C7300C7D42C /* GetMovieDetailsResponse.swift in Sources */,
+				5209DE5021E74C7300C7D42C /* GetMovieListResponse.swift in Sources */,
 				5209DE4821E74C7300C7D42C /* Constants.swift in Sources */,
 				5209DE4A21E74C7300C7D42C /* Environment.swift in Sources */,
 				52095EDF21E8742B00435BF1 /* MovieListViewModel.swift in Sources */,

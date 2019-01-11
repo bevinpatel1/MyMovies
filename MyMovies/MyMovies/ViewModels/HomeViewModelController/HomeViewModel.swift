@@ -15,22 +15,22 @@ enum HomeEvent {
 
 class HomeViewModel : BaseViewModel{
 
-    var movieTableData: Observable<[Movie]>
-    var movies: Variable<[Movie]> = Variable([])
+    var homeMoviesObservable : Observable<[Movie]>
+    var homeMoviesVariable   : Variable<[Movie]> = Variable([])
     let events = PublishSubject<HomeEvent>()
     
     override init() {
-        self.movieTableData = movies.asObservable()
+        self.homeMoviesObservable = homeMoviesVariable.asObservable()
         super.init();
     }
     func search(){
         events.onNext(.onSearch)
     }
-    func getMovies(nextPage: Int = 1) {
+    func getHomeData() {
         let parameter = [:] as [String : Any]
         
         API.shared.getHomeList(param: parameter)
-            .trackActivity(nextPage == 1 ? isLoading : ActivityIndicator())
+            .trackActivity(isLoading)
             .observeOn(SerialDispatchQueueScheduler(qos: .default))
             .subscribe {[weak self] (event) in
                 guard let `self` = self else { return }
@@ -38,7 +38,7 @@ class HomeViewModel : BaseViewModel{
                 case .next(let result):
                     switch result {
                     case .success(let response):
-                        self.movies.value = response.results ?? [];
+                        self.homeMoviesVariable.value = response.results ?? [];
                     case .failure(let error):
                         if error.code == InternetConnectionErrorCode.offline.rawValue {
                             self.alertDialog.onNext((NSLocalizedString("Network error", comment: ""), error.message))

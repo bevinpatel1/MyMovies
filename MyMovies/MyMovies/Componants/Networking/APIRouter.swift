@@ -12,14 +12,14 @@ import Alamofire
 enum APIRouter:URLRequestConvertible {
     
     case getHomeData(Parameters)
-    case getMovieDetails(movieId: String, param: Parameters)
+    case getListData(Parameters)
     
     
     func asURLRequest() throws -> URLRequest {
         
         var method: HTTPMethod {
             switch self {
-            case .getHomeData, .getMovieDetails:
+            case .getHomeData, .getListData:
                 return .get
             }
         }
@@ -28,7 +28,7 @@ enum APIRouter:URLRequestConvertible {
             switch self {
             case .getHomeData(let param):
                 return param
-            case .getMovieDetails(_, let param):
+            case .getListData(let param):
                 return param
             }
         }()
@@ -47,8 +47,8 @@ enum APIRouter:URLRequestConvertible {
                 switch self {
                 case .getHomeData:
                     return "home"
-                case .getMovieDetails(let id, _):
-                    return "movie/\(id)"
+                case .getListData:
+                    return "loadmore"
                 }
             }()
             

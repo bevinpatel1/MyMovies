@@ -13,6 +13,7 @@ class MovieListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModel.getMovies(pageNumber: 1)
     }
     override func setUI() {
         super.setUI()
