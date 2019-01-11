@@ -12,11 +12,23 @@ import FSPagerView
 class HomeCollectionViewCell: FSPagerViewCell {
     static let reuseIdentifier = "HomeCollectionViewCell"
     @IBOutlet var posterImage   : UIImageView!
+    @IBOutlet var buyButton     : UIButton!
     @IBOutlet var presaleLabel  : UILabel!
     
     func configure(movie: Movie){
         self.posterImage.downloadImageWithCaching(with: movie.posterPath ?? "")
         self.presaleLabel.isHidden = !(movie.presaleFlag ?? 0 == 1)
         self.clipsToBounds = false
+    }
+    override var isSelected: Bool{
+        didSet{
+            if isSelected{
+                buyButton.superview?.backgroundColor = UIColor.darkGray;
+                buyButton.isHidden = false
+            }else{
+                buyButton.superview?.backgroundColor = UIColor.clear;
+                buyButton.isHidden = true
+            }
+        }
     }
 }

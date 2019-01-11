@@ -87,6 +87,7 @@
             <viewLayoutGuide key="safeArea" id="Lba-gE-OT0"/>
             <size key="customSize" width="218" height="260"/>
             <connections>
+                <outlet property="buyButton" destination="D9P-9m-XgO" id="hGc-mq-gMw"/>
                 <outlet property="posterImage" destination="6EX-Dh-srH" id="Nei-w1-Ee8"/>
                 <outlet property="presaleLabel" destination="B70-zY-v1u" id="SxW-T9-lKl"/>
             </connections>

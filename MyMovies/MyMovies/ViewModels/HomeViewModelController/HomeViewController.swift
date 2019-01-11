@@ -14,7 +14,7 @@ import FSPagerView
 class HomeViewController: BaseViewController{
     
     var viewModel : HomeViewModel!
-    
+    var selectedIndex: Int = 0
     @IBOutlet var searchBarButton: UIBarButtonItem!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var pagerView: FSPagerView!
@@ -63,6 +63,10 @@ class HomeViewController: BaseViewController{
             self.titleLabel.isHidden = self.viewModel.homeMoviesVariable.value.count > 0 ? false : true
             self.movieNameLabel.text = self.viewModel.homeMoviesVariable.value.first?.title ?? ""
             self.movieTypeLabel.text = self.viewModel.homeMoviesVariable.value.first?.formatedGenre() ?? ""
+            self.selectedIndex = 0
+            if let cell = self.pagerView.cellForItem(at: 0){
+                cell.isSelected = true
+            }
         }).disposed(by: disposeBag)
     }
     override func didReceiveMemoryWarning() {
@@ -82,5 +86,11 @@ extension HomeViewController : FSPagerViewDelegate,FSPagerViewDataSource{
         let page = pagerView.currentIndex
         self.movieNameLabel.text = self.viewModel.homeMoviesVariable.value[Int(page)].title ?? ""
         self.movieTypeLabel.text = self.viewModel.homeMoviesVariable.value[Int(page)].formatedGenre()
+        pagerView.cellForItem(at: selectedIndex)?.isSelected = false
+        self.selectedIndex = page
+        pagerView.cellForItem(at: page)?.isSelected = true
+    }
+    func pagerView(_ pagerView: FSPagerView, didEndDisplaying cell: FSPagerViewCell, forItemAt index: Int) {
+        cell.isSelected = false
     }
 }
