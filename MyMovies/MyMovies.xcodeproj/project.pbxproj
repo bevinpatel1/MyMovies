@@ -44,6 +44,8 @@
 		5270161B21E8930F008C6523 /* ComingSoonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270161A21E8930F008C6523 /* ComingSoonViewModel.swift */; };
 		5270161D21E8953C008C6523 /* NowShowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270161C21E8953C008C6523 /* NowShowingViewController.swift */; };
 		5270161F21E8954E008C6523 /* ComingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270161E21E8954E008C6523 /* ComingSoonViewController.swift */; };
+		5270162321E89AC6008C6523 /* MovieListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270162121E89AC6008C6523 /* MovieListTableCell.swift */; };
+		5270162421E89AC6008C6523 /* MovieListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5270162221E89AC6008C6523 /* MovieListTableCell.xib */; };
 		52E0B39321E7420300759455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0B39221E7420300759455 /* AppDelegate.swift */; };
 		52E0B39821E7420300759455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E0B39621E7420300759455 /* Main.storyboard */; };
 		52E0B39A21E7420400759455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E0B39921E7420400759455 /* Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		5270161A21E8930F008C6523 /* ComingSoonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComingSoonViewModel.swift; sourceTree = "<group>"; };
 		5270161C21E8953C008C6523 /* NowShowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowShowingViewController.swift; sourceTree = "<group>"; };
 		5270161E21E8954E008C6523 /* ComingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonViewController.swift; sourceTree = "<group>"; };
+		5270162121E89AC6008C6523 /* MovieListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListTableCell.swift; sourceTree = "<group>"; };
+		5270162221E89AC6008C6523 /* MovieListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieListTableCell.xib; sourceTree = "<group>"; };
 		52E0B38F21E7420300759455 /* MyMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E0B39221E7420300759455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E0B39721E7420300759455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		52095EDD21E873FA00435BF1 /* MovieListViewModelController */ = {
 			isa = PBXGroup;
 			children = (
+				5270162021E89AC6008C6523 /* MovieListTableCell */,
 				52095EDE21E8742B00435BF1 /* MovieListViewModel.swift */,
 				52095EE021E8743E00435BF1 /* MovieListViewController.swift */,
 			);
@@ -258,6 +263,15 @@
 			path = ComingSoonViewModelController;
 			sourceTree = "<group>";
 		};
+		5270162021E89AC6008C6523 /* MovieListTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				5270162121E89AC6008C6523 /* MovieListTableCell.swift */,
+				5270162221E89AC6008C6523 /* MovieListTableCell.xib */,
+			);
+			path = MovieListTableCell;
+			sourceTree = "<group>";
+		};
 		52E0B38621E7420200759455 = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5270162421E89AC6008C6523 /* MovieListTableCell.xib in Resources */,
 				52E0B39D21E7420400759455 /* LaunchScreen.storyboard in Resources */,
 				52E0B39A21E7420400759455 /* Assets.xcassets in Resources */,
 				52E0B39821E7420300759455 /* Main.storyboard in Resources */,
@@ -387,6 +402,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyMovies/Pods-MyMovies-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/FloatRatingView/FloatRatingView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MXSegmentedControl/MXSegmentedControl.framework",
@@ -401,6 +417,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatRatingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedControl.framework",
@@ -459,6 +476,7 @@
 				5209DE4621E74C7300C7D42C /* APICallError.swift in Sources */,
 				52E0B39321E7420300759455 /* AppDelegate.swift in Sources */,
 				5209DE4B21E74C7300C7D42C /* ActivityIndicator.swift in Sources */,
+				5270162321E89AC6008C6523 /* MovieListTableCell.swift in Sources */,
 				5209DE5121E74C7300C7D42C /* GetHomeResponse.swift in Sources */,
 				52095EE121E8743E00435BF1 /* MovieListViewController.swift in Sources */,
 				5209DE6221E7578A00C7D42C /* UIImageView+SDWebImage.swift in Sources */,

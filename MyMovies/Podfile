@@ -13,4 +13,5 @@ target 'MyMovies' do
   pod 'SwiftMessages'
   pod 'FSPagerView'
   pod 'MXSegmentedControl'
+  pod 'FloatRatingView'
 end

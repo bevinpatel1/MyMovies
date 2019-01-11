@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D623444A8B9A6F956080CF0E3DBDE14E"
-               BlueprintName = "RxAtomic"
+               BlueprintIdentifier = "E10250FECAFAA00B2CAAF40A7178BE26"
+               BlueprintName = "FloatRatingView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "RxAtomic.framework">
+               BuildableName = "FloatRatingView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
