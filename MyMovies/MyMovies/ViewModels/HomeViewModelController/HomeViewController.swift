@@ -34,7 +34,7 @@ class HomeViewController: BaseViewController{
                                 forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
         self.pagerView.isInfinite = true
         self.pagerView.automaticSlidingInterval = 3.0
-        self.pagerView.itemSize = CGSize(width: 170, height: 260)
+        self.pagerView.itemSize = CGSize(width: 210, height: 260)
         
         self.pagerView.transformer = FSPagerViewTransformer(type:.linear)
         self.pagerView.transformer?.minimumScale = 0.9

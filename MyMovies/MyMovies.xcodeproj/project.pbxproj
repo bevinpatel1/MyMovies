@@ -216,18 +216,18 @@
 			children = (
 				5209DE5721E74DBB00C7D42C /* HomeViewModel.swift */,
 				5209DE5921E74E0400C7D42C /* HomeViewController.swift */,
-				5209DE6321E76DCC00C7D42C /* Cell */,
+				5209DE6321E76DCC00C7D42C /* HomeCollectionViewCell */,
 			);
 			path = HomeViewModelController;
 			sourceTree = "<group>";
 		};
-		5209DE6321E76DCC00C7D42C /* Cell */ = {
+		5209DE6321E76DCC00C7D42C /* HomeCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				5209DE5F21E74F0900C7D42C /* HomeCollectionViewCell.swift */,
 				5209DE6421E76DE000C7D42C /* HomeCollectionViewCell.xib */,
 			);
-			path = Cell;
+			path = HomeCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		5209DE6621E77BFD00C7D42C /* SearchViewModelController */ = {
