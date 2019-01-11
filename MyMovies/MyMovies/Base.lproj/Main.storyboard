@@ -205,10 +205,64 @@
         <!--Page View Controller-->
         <scene sceneID="PLW-2H-3bb">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="D6v-NI-rUo" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="D6v-NI-rUo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVU-hp-ate" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1965" y="543"/>
+        </scene>
+        <!--Now Showing View Controller-->
+        <scene sceneID="Twt-DG-Puz">
+            <objects>
+                <viewController storyboardIdentifier="NowShowingViewController" id="4YD-2p-kyq" customClass="NowShowingViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m1M-Nl-bb6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zwx-ez-LY4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Zwx-ez-LY4" secondAttribute="bottom" id="DIg-h3-exb"/>
+                            <constraint firstItem="Zwx-ez-LY4" firstAttribute="leading" secondItem="m1M-Nl-bb6" secondAttribute="leading" id="jMu-Tf-tZI"/>
+                            <constraint firstAttribute="trailing" secondItem="Zwx-ez-LY4" secondAttribute="trailing" id="mPi-Lm-7ak"/>
+                            <constraint firstItem="Zwx-ez-LY4" firstAttribute="top" secondItem="m1M-Nl-bb6" secondAttribute="top" id="qG7-zi-Zz6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d3K-P4-FP1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WxA-U7-9E3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2829" y="230"/>
+        </scene>
+        <!--Coming Soon View Controller-->
+        <scene sceneID="CCc-Pz-27x">
+            <objects>
+                <viewController storyboardIdentifier="ComingSoonViewController" id="dvK-wR-y13" customClass="ComingSoonViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iAw-dA-PQ3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RNF-N6-gMz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RNF-N6-gMz" firstAttribute="leading" secondItem="iAw-dA-PQ3" secondAttribute="leading" id="5DI-Ay-h1g"/>
+                            <constraint firstItem="RNF-N6-gMz" firstAttribute="top" secondItem="iAw-dA-PQ3" secondAttribute="top" id="638-W6-Cd9"/>
+                            <constraint firstAttribute="trailing" secondItem="RNF-N6-gMz" secondAttribute="trailing" id="r1C-h6-8Wo"/>
+                            <constraint firstAttribute="bottom" secondItem="RNF-N6-gMz" secondAttribute="bottom" id="zls-DF-axZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9dn-eK-Yu6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycp-Wd-6vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2829" y="914"/>
         </scene>
     </scenes>
 </document>

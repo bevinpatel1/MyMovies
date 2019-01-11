@@ -19,6 +19,9 @@ enum NavigationStackAction {
 class AppRootViewModel : BaseViewModel{
     lazy var navigationStackActions = BehaviorSubject<NavigationStackAction>(value: .set(viewModels: [self.homeViewModel()], animated: false))
 
+    override init() {
+        super.init();
+    }
     private func homeViewModel() -> HomeViewModel {
         let loginViewModel = HomeViewModel()
         loginViewModel.events.subscribe(onNext: { [weak self] event in

@@ -31,6 +31,14 @@ func viewController(forViewModel viewModel: Any) -> UIViewController? {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieListViewController") as? MovieListViewController
         viewController?.viewModel = viewModel;
         return viewController;
+    case let viewModel as NowShowingViewModel:
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NowShowingViewController") as? NowShowingViewController
+        viewController?.viewModel = viewModel;
+        return viewController;
+    case let viewModel as ComingSoonViewModel:
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ComingSoonViewController") as? ComingSoonViewController
+        viewController?.viewModel = viewModel;
+        return viewController;
     default:
         return nil
     }

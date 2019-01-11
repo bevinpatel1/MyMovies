@@ -40,6 +40,10 @@
 		5209DE6A21E77C5D00C7D42C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6921E77C5D00C7D42C /* SearchViewController.swift */; };
 		5209DE6E21E7939700C7D42C /* SearchRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6C21E7939700C7D42C /* SearchRootViewModel.swift */; };
 		5209DE6F21E7939700C7D42C /* SearchRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6D21E7939700C7D42C /* SearchRootViewController.swift */; };
+		5270161921E89305008C6523 /* NowShowingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270161821E89305008C6523 /* NowShowingViewModel.swift */; };
+		5270161B21E8930F008C6523 /* ComingSoonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270161A21E8930F008C6523 /* ComingSoonViewModel.swift */; };
+		5270161D21E8953C008C6523 /* NowShowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270161C21E8953C008C6523 /* NowShowingViewController.swift */; };
+		5270161F21E8954E008C6523 /* ComingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270161E21E8954E008C6523 /* ComingSoonViewController.swift */; };
 		52E0B39321E7420300759455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0B39221E7420300759455 /* AppDelegate.swift */; };
 		52E0B39821E7420300759455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E0B39621E7420300759455 /* Main.storyboard */; };
 		52E0B39A21E7420400759455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E0B39921E7420400759455 /* Assets.xcassets */; };
@@ -83,6 +87,10 @@
 		5209DE6921E77C5D00C7D42C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5209DE6C21E7939700C7D42C /* SearchRootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRootViewModel.swift; sourceTree = "<group>"; };
 		5209DE6D21E7939700C7D42C /* SearchRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRootViewController.swift; sourceTree = "<group>"; };
+		5270161821E89305008C6523 /* NowShowingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowShowingViewModel.swift; sourceTree = "<group>"; };
+		5270161A21E8930F008C6523 /* ComingSoonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComingSoonViewModel.swift; sourceTree = "<group>"; };
+		5270161C21E8953C008C6523 /* NowShowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowShowingViewController.swift; sourceTree = "<group>"; };
+		5270161E21E8954E008C6523 /* ComingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonViewController.swift; sourceTree = "<group>"; };
 		52E0B38F21E7420300759455 /* MyMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E0B39221E7420300759455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E0B39721E7420300759455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +139,8 @@
 				5209DE6B21E7933D00C7D42C /* SearchRootModelController */,
 				5209DE6621E77BFD00C7D42C /* SearchViewModelController */,
 				52095EDD21E873FA00435BF1 /* MovieListViewModelController */,
+				5270161621E8929E008C6523 /* NowShowingViewModelController */,
+				5270161721E892A6008C6523 /* ComingSoonViewModelController */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -228,6 +238,24 @@
 				5209DE6D21E7939700C7D42C /* SearchRootViewController.swift */,
 			);
 			path = SearchRootModelController;
+			sourceTree = "<group>";
+		};
+		5270161621E8929E008C6523 /* NowShowingViewModelController */ = {
+			isa = PBXGroup;
+			children = (
+				5270161821E89305008C6523 /* NowShowingViewModel.swift */,
+				5270161C21E8953C008C6523 /* NowShowingViewController.swift */,
+			);
+			path = NowShowingViewModelController;
+			sourceTree = "<group>";
+		};
+		5270161721E892A6008C6523 /* ComingSoonViewModelController */ = {
+			isa = PBXGroup;
+			children = (
+				5270161A21E8930F008C6523 /* ComingSoonViewModel.swift */,
+				5270161E21E8954E008C6523 /* ComingSoonViewController.swift */,
+			);
+			path = ComingSoonViewModelController;
 			sourceTree = "<group>";
 		};
 		52E0B38621E7420200759455 = {
@@ -421,10 +449,13 @@
 				5209DE4421E74C7300C7D42C /* APIRouter.swift in Sources */,
 				52095EE321E87B6600435BF1 /* Movie.swift in Sources */,
 				5209DE4C21E74C7300C7D42C /* Extension.swift in Sources */,
+				5270161F21E8954E008C6523 /* ComingSoonViewController.swift in Sources */,
 				5209DE4E21E74C7300C7D42C /* Dictionary+CamelCase.swift in Sources */,
 				5209DE6A21E77C5D00C7D42C /* SearchViewController.swift in Sources */,
 				5209DE5421E74CAF00C7D42C /* BaseViewController.swift in Sources */,
+				5270161D21E8953C008C6523 /* NowShowingViewController.swift in Sources */,
 				5209DE4F21E74C7300C7D42C /* Utils.swift in Sources */,
+				5270161B21E8930F008C6523 /* ComingSoonViewModel.swift in Sources */,
 				5209DE4621E74C7300C7D42C /* APICallError.swift in Sources */,
 				52E0B39321E7420300759455 /* AppDelegate.swift in Sources */,
 				5209DE4B21E74C7300C7D42C /* ActivityIndicator.swift in Sources */,
@@ -442,6 +473,7 @@
 				5209DE6E21E7939700C7D42C /* SearchRootViewModel.swift in Sources */,
 				52095EE521E87B8900435BF1 /* MovieList.swift in Sources */,
 				5209DE6821E77C4400C7D42C /* SearchViewModel.swift in Sources */,
+				5270161921E89305008C6523 /* NowShowingViewModel.swift in Sources */,
 				5209DE5021E74C7300C7D42C /* GetMovieListResponse.swift in Sources */,
 				5209DE4821E74C7300C7D42C /* Constants.swift in Sources */,
 				5209DE4A21E74C7300C7D42C /* Environment.swift in Sources */,

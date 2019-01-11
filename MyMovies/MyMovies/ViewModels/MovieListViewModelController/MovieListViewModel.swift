@@ -10,38 +10,18 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+enum PagerStackAction {
+    case show(viewModels : Any,direction : UIPageViewController.NavigationDirection, animated: Bool)
+}
 class MovieListViewModel: BaseViewModel {
-    
-    var listMoviesObservable    : Observable<[MovieList]>
-    var listMoviesVariable      : Variable<[MovieList]> = Variable([])
-    
+    var pagerStackActions = BehaviorSubject<PagerStackAction>(value: .show(viewModels : NowShowingViewModel(),direction : UIPageViewController.NavigationDirection.forward, animated: false))
     override init() {
-        self.listMoviesObservable = listMoviesVariable.asObservable()
         super.init();
     }
-    func getMovies(pageNumber : Int = 1) {
-        let parameter = [:] as [String : Any]
-        
-        API.shared.getListData(param: parameter)
-            .trackActivity(pageNumber==1 ? isLoading : ActivityIndicator())
-            .observeOn(SerialDispatchQueueScheduler(qos: .default))
-            .subscribe {[weak self] (event) in
-                guard let `self` = self else { return }
-                switch event {
-                case .next(let result):
-                    switch result {
-                    case .success(let response):
-                        self.listMoviesVariable.value = response.results ?? [];
-                    case .failure(let error):
-                        if error.code == InternetConnectionErrorCode.offline.rawValue {
-                            self.alertDialog.onNext((NSLocalizedString("Network error", comment: ""), error.message))
-                        } else {
-                            self.alertDialog.onNext(("Error", error.message))
-                        }
-                    }
-                default:
-                    break
-                }
-            }.disposed(by: disposeBag)
+    func onNowShowing(){
+        self.pagerStackActions.onNext(.show(viewModels: NowShowingViewModel(), direction: .reverse, animated: true))
+    }
+    func onComingSoon(){
+        self.pagerStackActions.onNext(.show(viewModels: ComingSoonViewModel(), direction: .forward, animated: true))
     }
 }
