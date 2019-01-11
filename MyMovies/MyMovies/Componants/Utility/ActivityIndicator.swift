@@ -27,7 +27,6 @@ private struct ActivityToken<E> : ObservableConvertibleType, Disposable {
         return _source
     }
 }
-
 /**
  Enables monitoring of sequence computation.
  

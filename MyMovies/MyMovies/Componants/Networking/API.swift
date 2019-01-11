@@ -12,19 +12,13 @@ import RxAlamofire
 import Alamofire
 
 class API {
-    
     static let shared:API = {
         let instance = API()
         return instance
     }()
-    
     init() {
-        
     }
-    
-    // Call Get Movie List API
     func getHomeList(param: Parameters) -> Observable<APIResult<GetHomeResponse>> {
-        
         return API.handleDataRequest(dataRequest: APIManager.shared.requestObservable(api: APIRouter.getHomeData(param))).map({ (response) -> APIResult<GetHomeResponse> in
             if (response ?? [:]).keys.contains("Error") {
                 if (response ?? [:]).keys.contains("IsInternetOff") {
@@ -36,7 +30,6 @@ class API {
                 }
                 return APIResult.failure(error: APICallError(critical: false, code: 1111, reason: response!["Error"] as! String, message: response!["Error"] as! String))
             }
-            
             let apiResponse = GetHomeResponse(response: response)
             let (apiStatus, _) = (true, APICallError.init(status: .success))
             if apiStatus {
@@ -45,7 +38,6 @@ class API {
         })
     }
     func getListData(param: Parameters) -> Observable<APIResult<GetMovieListResponse>> {
-        
         return API.handleDataRequest(dataRequest: APIManager.shared.requestObservable(api: APIRouter.getListData(param))).map({ (response) -> APIResult<GetMovieListResponse> in
             if (response ?? [:]).keys.contains("Error"){
                 if (response ?? [:]).keys.contains("IsInternetOff"){
@@ -62,7 +54,6 @@ class API {
             if apiStatus { return APIResult.success(value: apiResponse) }
         })
     }
-
     private static func handleDataRequest(dataRequest: Observable<DataRequest>) -> Observable<[String:Any]?> {
 
         if NetworkReachabilityManager()!.isReachable == false {
@@ -73,21 +64,14 @@ class API {
                 return Disposables.create()
             })
         }
-        
         return Observable<[String: Any]?>.create({ (observer) -> Disposable in
             dataRequest.observeOn(MainScheduler.instance).subscribe({ (event) in
-                
                 switch event {
-                    
                 case .next(let e):
                     plog(e.debugDescription)
-                    
                     e.responseJSON(completionHandler: { (dataResponse) in
-                        
                         switch dataResponse.result {
-                            
                         case .success(let data):
-                            
                             guard var json = data as? [String:Any] else {
                                 observer.onNext(nil)
                                 return
@@ -100,9 +84,7 @@ class API {
                                                  "IsInternetOff":false])
                                 return
                             }
-                            
                             observer.onNext(json.keysToCamelCase)
-                            
                         case .failure(let error):
                             plog(error)
                             let errorCode = (error as NSError).code
@@ -113,11 +95,9 @@ class API {
                                 observer.onNext(["Error":error.localizedDescription,
                                                  "IsInternetOff":false])
                             }
-                            
                             observer.onCompleted()
                         }
                     })
-                    
                 case .error(let error):
                     plog(error)
                     observer.onNext(["Error":error.localizedDescription])

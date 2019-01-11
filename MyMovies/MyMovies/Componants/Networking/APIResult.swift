@@ -9,12 +9,9 @@
 import Foundation
 
 enum APIResult <Value> {
-    
     case success(value: Value)
-    
     case failure(error: APICallError)
     
-    // Remove it if not needed.
     init(_ f: () throws -> Value) {
         do {
             let value = try f()

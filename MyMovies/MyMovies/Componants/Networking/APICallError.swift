@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-
 enum APICallStatus: Error {
     
     case success
@@ -29,9 +27,7 @@ class APICallError {
     var callStatus: APICallStatus = .unknown
     
     init() {
-        
     }
-    
     init(critical:Bool, code:Int, reason:String, message:String, callStatus: APICallStatus = .unknown) {
         self.critical = critical
         self.code = code
@@ -39,7 +35,6 @@ class APICallError {
         self.message = message
         self.callStatus = callStatus
     }
-    
     convenience init(status:APICallStatus) {
         switch status {
         case .success:
@@ -58,5 +53,4 @@ class APICallError {
             self.init(critical: false, code: 1000, reason: "Unknown error", message: NSLocalizedString("Unknown error", comment: ""))
         }
     }
-    
 }

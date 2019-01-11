@@ -34,7 +34,6 @@
 		5209DE5D21E74E1A00C7D42C /* AppRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE5B21E74E1900C7D42C /* AppRootViewModel.swift */; };
 		5209DE5E21E74E1A00C7D42C /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE5C21E74E1A00C7D42C /* AppRootViewController.swift */; };
 		5209DE6021E74F0900C7D42C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE5F21E74F0900C7D42C /* HomeCollectionViewCell.swift */; };
-		5209DE6221E7578A00C7D42C /* UIImageView+SDWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6121E7578900C7D42C /* UIImageView+SDWebImage.swift */; };
 		5209DE6521E76DE000C7D42C /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5209DE6421E76DE000C7D42C /* HomeCollectionViewCell.xib */; };
 		5209DE6821E77C4400C7D42C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6721E77C4400C7D42C /* SearchViewModel.swift */; };
 		5209DE6A21E77C5D00C7D42C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209DE6921E77C5D00C7D42C /* SearchViewController.swift */; };
@@ -84,7 +83,6 @@
 		5209DE5B21E74E1900C7D42C /* AppRootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRootViewModel.swift; sourceTree = "<group>"; };
 		5209DE5C21E74E1A00C7D42C /* AppRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
 		5209DE5F21E74F0900C7D42C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		5209DE6121E7578900C7D42C /* UIImageView+SDWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SDWebImage.swift"; sourceTree = "<group>"; };
 		5209DE6421E76DE000C7D42C /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		5209DE6721E77C4400C7D42C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5209DE6921E77C5D00C7D42C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				5209DE3921E74C7300C7D42C /* Environment.swift */,
 				5209DE3A21E74C7300C7D42C /* ActivityIndicator.swift */,
 				5209DE3B21E74C7300C7D42C /* Extension.swift */,
-				5209DE6121E7578900C7D42C /* UIImageView+SDWebImage.swift */,
 				5209DE3C21E74C7300C7D42C /* String+CamelCase.swift */,
 				5209DE3D21E74C7300C7D42C /* Dictionary+CamelCase.swift */,
 				5209DE3E21E74C7300C7D42C /* Utils.swift */,
@@ -482,7 +479,6 @@
 				5270162321E89AC6008C6523 /* MovieListTableCell.swift in Sources */,
 				5209DE5121E74C7300C7D42C /* GetHomeResponse.swift in Sources */,
 				52095EE121E8743E00435BF1 /* MovieListViewController.swift in Sources */,
-				5209DE6221E7578A00C7D42C /* UIImageView+SDWebImage.swift in Sources */,
 				5209DE4D21E74C7300C7D42C /* String+CamelCase.swift in Sources */,
 				5209DE5E21E74E1A00C7D42C /* AppRootViewController.swift in Sources */,
 				5209DE2C21E74BEE00C7D42C /* BaseViewModel.swift in Sources */,
