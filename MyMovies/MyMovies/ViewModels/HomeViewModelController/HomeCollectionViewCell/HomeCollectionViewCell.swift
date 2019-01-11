@@ -11,9 +11,9 @@ import FSPagerView
 
 class HomeCollectionViewCell: FSPagerViewCell {
     static let reuseIdentifier = "HomeCollectionViewCell"
-    @IBOutlet var posterImage   : UIImageView!
-    @IBOutlet var buyButton     : UIButton!
-    @IBOutlet var presaleLabel  : UILabel!
+    @IBOutlet private var posterImage   : UIImageView!
+    @IBOutlet private var buyButton     : UIButton!
+    @IBOutlet private var presaleLabel  : UILabel!
     
     func configure(movie: Movie){
         self.posterImage.downloadImageWithCaching(with: movie.posterPath ?? "")

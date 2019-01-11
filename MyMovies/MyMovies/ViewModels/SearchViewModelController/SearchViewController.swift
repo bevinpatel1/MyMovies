@@ -13,9 +13,8 @@ import RxCocoa
 class SearchViewController: BaseViewController {
 
     var viewModel : SearchViewModel!
-    let searchBar = UISearchBar()
-    
-    @IBOutlet var tableView: UITableView!
+              private let searchBar : UISearchBar = UISearchBar()
+    @IBOutlet private var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,12 +14,12 @@ import FSPagerView
 class HomeViewController: BaseViewController{
     
     var viewModel : HomeViewModel!
-    var selectedIndex: Int = 0
-    @IBOutlet var searchBarButton: UIBarButtonItem!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var pagerView: FSPagerView!
-    @IBOutlet var movieNameLabel: UILabel!
-    @IBOutlet var movieTypeLabel: UILabel!
+              private var selectedIndex     : Int = 0
+    @IBOutlet private var searchBarButton   : UIBarButtonItem!
+    @IBOutlet private var titleLabel        : UILabel!
+    @IBOutlet private var pagerView         : FSPagerView!
+    @IBOutlet private var movieNameLabel    : UILabel!
+    @IBOutlet private var movieTypeLabel    : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

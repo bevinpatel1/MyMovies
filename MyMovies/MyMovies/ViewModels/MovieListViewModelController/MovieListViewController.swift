@@ -12,8 +12,8 @@ import MXSegmentedControl
 class MovieListViewController: BaseViewController {
     var viewModel : MovieListViewModel!
     
-    @IBOutlet var segmentedControl: MXSegmentedControl!
-    var pageViewController : UIPageViewController?
+    @IBOutlet private var segmentedControl   : MXSegmentedControl!
+              private var pageViewController : UIPageViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()

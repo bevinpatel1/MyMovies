@@ -11,7 +11,7 @@ import RxSwift
 
 class ComingSoonViewController: BaseViewController {
     var viewModel : ComingSoonViewModel!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

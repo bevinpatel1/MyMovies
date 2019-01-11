@@ -19,14 +19,14 @@ class BaseViewController: UIViewController {
         self.setEventBinding()
         self.setDataBinding()
     }
+    // Will called after viewdidload of superclass. We will do UI related code in this override function
     func setUI(){
-        
     }
+    // Will called after setUI of self. We will do event binding in this override function
     func setEventBinding(){
-        
     }
+    // Will called after setEventBinding of self. We will do data binding in this override function
     func setDataBinding(){
-        
     }
     func showAlertDialogue( title: String , message: String){
         

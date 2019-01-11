@@ -11,7 +11,7 @@ import RxSwift
 
 class NowShowingViewController: BaseViewController {
     var viewModel : NowShowingViewModel!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,9 +15,10 @@ enum HomeEvent {
 
 class HomeViewModel : BaseViewModel{
 
-    var homeMoviesObservable : Observable<[Movie]>
-    var homeMoviesVariable   : Variable<[Movie]> = Variable([])
     let events = PublishSubject<HomeEvent>()
+    
+    var homeMoviesVariable   : Variable<[Movie]> = Variable([])
+    private var homeMoviesObservable : Observable<[Movie]>
     
     override init() {
         self.homeMoviesObservable = homeMoviesVariable.asObservable()

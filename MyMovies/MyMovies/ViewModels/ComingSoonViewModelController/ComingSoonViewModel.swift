@@ -12,11 +12,11 @@ import RxSwift
 
 class ComingSoonViewModel: BaseViewModel {
     
-    let searchString            : String!
     var pageNumber              : NSInteger = 1
     var listMoviesObservable    : Observable<[MovieList]>
-    var listMoviesVariable      : Variable<[MovieList]>  = Variable([])
     var loadMoreCall            : PublishSubject<Void>   = PublishSubject<Void>()
+    private var listMoviesVariable      : Variable<[MovieList]>  = Variable([])
+    private let searchString            : String!
     
     init(searchString : String) {
         self.searchString = searchString

@@ -18,8 +18,8 @@ enum SearchEvent {
 class SearchViewModel: BaseViewModel {
     let events = PublishSubject<SearchEvent>()
     var searchTableData: Observable<[SearchKey]>
-    var searchKeys : Variable<[SearchKey]> = Variable([])
     var searchString : BehaviorRelay<String>   = BehaviorRelay(value: "")
+    private var searchKeys : Variable<[SearchKey]> = Variable([])
     
     override init() {
         self.searchTableData = searchKeys.asObservable()
