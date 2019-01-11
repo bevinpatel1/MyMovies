@@ -12,4 +12,5 @@ target 'MyMovies' do
   pod 'Kingfisher'
   pod 'SwiftMessages'
   pod 'FSPagerView'
+  pod 'MXSegmentedControl'
 end
