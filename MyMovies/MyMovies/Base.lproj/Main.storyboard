@@ -154,5 +154,44 @@
             </objects>
             <point key="canvasLocation" x="-300" y="544"/>
         </scene>
+        <!--Movie List View Controller-->
+        <scene sceneID="lxr-6Y-tBJ">
+            <objects>
+                <viewController storyboardIdentifier="MovieListViewController" id="mRZ-wy-DXt" customClass="MovieListViewController" customModule="MyMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nQ5-z4-BHT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x1d-bB-XB4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="NM6-zA-wXF">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NM6-zA-wXF" id="Jwt-0u-flA">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x1d-bB-XB4" firstAttribute="top" secondItem="U1b-IU-mda" secondAttribute="top" id="CVx-61-pag"/>
+                            <constraint firstItem="U1b-IU-mda" firstAttribute="trailing" secondItem="x1d-bB-XB4" secondAttribute="trailing" id="H2g-sG-uZN"/>
+                            <constraint firstItem="x1d-bB-XB4" firstAttribute="leading" secondItem="U1b-IU-mda" secondAttribute="leading" id="Ybf-Sd-VvH"/>
+                            <constraint firstItem="U1b-IU-mda" firstAttribute="bottom" secondItem="x1d-bB-XB4" secondAttribute="bottom" id="uaK-kq-yUX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U1b-IU-mda"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fia-iz-gPg"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ih6-Kq-tMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1119" y="543"/>
+        </scene>
     </scenes>
 </document>

@@ -10,8 +10,13 @@ import UIKit
 import Foundation
 import RxSwift
 import RxCocoa
+enum SearchEvent {
+    case onMovieList
+    case onDismiss
+}
 
 class SearchViewModel: BaseViewModel {
+    let events = PublishSubject<SearchEvent>()
     var searchTableData: Observable<[SearchKey]>
     var searchKeys : Variable<[SearchKey]> = Variable([])
     var searchString : BehaviorRelay<String>   = BehaviorRelay(value: "")
@@ -24,8 +29,12 @@ class SearchViewModel: BaseViewModel {
     private func loadDefault(){
         searchKeys.value = self.loadRecent()
     }
+    func cancelTap(){
+        events.onNext(.onDismiss)
+    }
     func serchTap(){
         self.setRecent(searhcKey: SearchKey(title: searchString.value))
+        events.onNext(.onMovieList)
     }
     private func loadRecent()->[SearchKey]{
         if let addressData = UserDefaults.standard.object(forKey:"SearchHistrory") as? Data{
@@ -40,9 +49,9 @@ class SearchViewModel: BaseViewModel {
         var recentArray = self.loadRecent()
         recentArray.insert(searhcKey, at: 0)
         if recentArray.count > 10{
-            recentArray.removeLast();
+            recentArray.removeLast()
         }
-        searchKeys.value = recentArray;
+        searchKeys.value = recentArray
         
         let recentData = NSKeyedArchiver.archivedData(withRootObject: recentArray)
         UserDefaults.standard.set(recentData, forKey:"SearchHistrory")

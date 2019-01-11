@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-enum Event {
+enum HomeEvent {
     case onSearch
 }
 
@@ -17,7 +17,7 @@ class HomeViewModel : BaseViewModel{
 
     var movieTableData: Observable<[Movie]>
     var movies: Variable<[Movie]> = Variable([])
-    let events = PublishSubject<Event>()
+    let events = PublishSubject<HomeEvent>()
     
     override init() {
         self.movieTableData = movies.asObservable()

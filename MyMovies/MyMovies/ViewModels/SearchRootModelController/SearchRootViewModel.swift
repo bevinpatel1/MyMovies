@@ -13,6 +13,17 @@ class SearchRootViewModel : BaseViewModel{
 
     private func searchViewModel() -> SearchViewModel {
         let searchViewModel = SearchViewModel()
+        searchViewModel.events.subscribe(onNext: { [weak self] event in
+            switch event {
+            case .onMovieList:
+                self?.showMovieList()
+            case .onDismiss:
+                self?.navigationStackActions.onNext(NavigationStackAction.dismiss(animated: true))
+            }
+        }).disposed(by: disposeBag)
         return searchViewModel
+    }
+    private func showMovieList(){
+        self.navigationStackActions.onNext(NavigationStackAction.push(viewModel: MovieListViewModel(), animated: true))
     }
 }

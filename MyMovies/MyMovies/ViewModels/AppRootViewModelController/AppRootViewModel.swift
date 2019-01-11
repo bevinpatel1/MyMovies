@@ -14,6 +14,7 @@ enum NavigationStackAction {
     case push(viewModel: Any, animated: Bool)
     case pop(animated: Bool)
     case present(viewModel: Any, animated : Bool)
+    case dismiss(animated : Bool)
 }
 class AppRootViewModel : BaseViewModel{
     lazy var navigationStackActions = BehaviorSubject<NavigationStackAction>(value: .set(viewModels: [self.homeViewModel()], animated: false))

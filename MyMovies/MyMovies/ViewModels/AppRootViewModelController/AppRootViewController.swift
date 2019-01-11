@@ -31,6 +31,9 @@ class AppRootViewController: UINavigationController {
                 case .present(let viewModel, let animated):
                     guard let viewController = viewController(forViewModel: viewModel) else { return }
                     self?.present(viewController, animated: animated)
+                
+                case .dismiss(let animated):
+                    self?.dismiss(animated: animated)
                 }
         }).disposed(by: disposeBag)
     }

@@ -30,10 +30,7 @@ class SearchViewController: BaseViewController {
         self.navigationItem.titleView = searchBar
     }
     override func setEventBinding() {
-        searchBar.rx.cancelButtonClicked.subscribe(onNext: {
-            self.searchBar.resignFirstResponder();
-        }).disposed(by: disposeBag)
-        
+        self.searchBar.rx.cancelButtonClicked.bind(onNext: viewModel.cancelTap).disposed(by: disposeBag);
         self.searchBar.rx.searchButtonClicked.bind(onNext: viewModel.serchTap).disposed(by: disposeBag);
         self.searchBar.rx.text.orEmpty.bind(to: viewModel.searchString).disposed(by: disposeBag)
     }

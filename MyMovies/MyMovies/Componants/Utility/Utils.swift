@@ -27,6 +27,10 @@ func viewController(forViewModel viewModel: Any) -> UIViewController? {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController
         viewController?.viewModel = viewModel;
         return viewController;
+    case let viewModel as MovieListViewModel:
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieListViewController") as? MovieListViewController
+        viewController?.viewModel = viewModel;
+        return viewController;
     default:
         return nil
     }
