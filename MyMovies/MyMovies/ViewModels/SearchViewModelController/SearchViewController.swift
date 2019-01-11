@@ -25,8 +25,8 @@ class SearchViewController: BaseViewController {
         searchBar.tintColor = UIColor.black
         searchBar.barStyle = .blackTranslucent
         searchBar.showsCancelButton = true
-        searchBar.sizeToFit()
         searchBar.becomeFirstResponder();
+        searchBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
         self.navigationItem.titleView = searchBar
     }
     override func setEventBinding() {
